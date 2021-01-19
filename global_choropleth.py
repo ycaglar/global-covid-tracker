@@ -21,18 +21,14 @@ app = dash.Dash(
 server = app.server
 
 
+df = df[df['Date_reported'] == pd.Timestamp.today().normalize() - pd.Timedelta(days=1)]
 df = df[['Date_reported', 'Country', 'Country_code', 'Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths']]
-df = df.groupby(['Country', 'Country_code', 'Region', pd.Grouper(key='Date_reported', freq='M')]).agg({'New_cases':'sum', 'Cumulative_cases':'sum', 'Cumulative_deaths':'sum'}).reset_index()
-df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m')
-
-# df = px.data.gapminder().query("year==2007")
-# from dataframe_exporter import export
-# export(df)
+df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m-%d')
 
 fig = px.choropleth(df,
                     locations='Country_code',
-                    color="Cumulative_cases", # lifeExp is a column of gapminder
-                    hover_name="Country", # column to add to hover information
+                    color="New_cases",
+                    hover_name="Country",
                     hover_data=df.columns,
                     color_continuous_scale=px.colors.sequential.Plasma)
 fig.update_geos(projection_type="orthographic")

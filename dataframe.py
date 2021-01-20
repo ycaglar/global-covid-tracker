@@ -18,9 +18,5 @@ dataframe = dataframe.rename(columns={'WHO_region':'Region'})
 dataframe['Country'].replace(countries, inplace=True)
 dataframe.loc[dataframe['Country'] == 'Namibia', 'Country_code'] = 'NA'
 
-# df = dataframe[['Country', 'Country_code']].drop_duplicates()
-# df.to_csv(r'~/Downloads/DataFrames/dataframe.csv', index = False)
-# breakpoint()
-
-dataframe['Country_code'].replace(iso_codes, inplace=True)
-#dataframe['Country_code'] = dataframe['Country_code'].apply(lambda code:iso_codes[code])
+#dataframe['Country_code'].replace(iso_codes, inplace=True)
+dataframe['Country_code'] = dataframe['Country_code'].apply(lambda code:iso_codes[code])

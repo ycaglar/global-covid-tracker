@@ -16,7 +16,7 @@ import pprint
 from dataframe import dataframe as df
 
 app = dash.Dash(
-    __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}]
+    __name__, meta_tags=[{'name': 'viewport', 'content': 'width=device-width'}]
 )
 server = app.server
 
@@ -25,7 +25,7 @@ df = df.groupby(['Country', 'Region', pd.Grouper(key='Date_reported', freq='M')]
 df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m')
 
 
-df = px.data.gapminder().query("year == 2007")
+df = px.data.gapminder().query('year == 2007')
 fig = px.sunburst(df,
                   path=['continent', 'country'],
                   values='pop',
@@ -41,5 +41,5 @@ app.layout = html.Div([
 
 
 # Main
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run_server(debug=True)

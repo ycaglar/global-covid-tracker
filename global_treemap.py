@@ -16,7 +16,7 @@ import pprint
 from dataframe import dataframe as df
 
 app = dash.Dash(
-    __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}]
+    __name__, meta_tags=[{'name': 'viewport', 'content': 'width=device-width'}]
 )
 server = app.server
 
@@ -26,7 +26,7 @@ df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m')
 
 import plotly.express as px
 import numpy as np
-df = px.data.gapminder().query("year == 2007")
+df = px.data.gapminder().query('year == 2007')
 fig = px.treemap(df,
                  path=[px.Constant('world'), 'continent', 'country'],
                  values='pop',
@@ -41,5 +41,5 @@ app.layout = html.Div([
 
 
 # Main
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run_server(debug=True)

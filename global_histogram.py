@@ -16,7 +16,7 @@ import pprint
 from dataframe import dataframe as df
 
 app = dash.Dash(
-    __name__, meta_tags=[{'name': 'viewport', 'content': 'width=device-width'}]
+    __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
 )
 server = app.server
 
@@ -25,22 +25,22 @@ df = df[df['New_cases'] > 0]
 d = df.groupby('Region')['New_cases'].apply(list).tolist()
 
 fig = px.histogram(df,
-                   x='Date_reported',
-                   y='New_cases',
-                   color='Region',
-                   hover_data=df.columns,
-                   barmode='overlay',
-                   labels={'New_cases':'New Cases', 'Date_reported':'Date Reported', 'WHO_region':'Region'})
+                   x = 'Date_reported',
+                   y = 'New_cases',
+                   color = 'Region',
+                   hover_data = df.columns,
+                   barmode = 'overlay',
+                   labels = {'New_cases':'New Cases', 'Date_reported':'Date Reported', 'WHO_region':'Region'})
 
 
 app.layout = html.Div([
     dcc.Graph(
-        id='corona',
-        figure=fig
+        id = 'corona',
+        figure = fig
     )
 ])
 
 
 # Main
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug = True)

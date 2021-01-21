@@ -16,12 +16,12 @@ import pprint
 from dataframe import dataframe as df
 
 app = dash.Dash(
-    __name__, meta_tags=[{'name': 'viewport', 'content': 'width=device-width'}]
+    __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
 )
 server = app.server
 
 
-df = df[df['Date_reported'] == pd.Timestamp.today().normalize() - pd.Timedelta(days=1)]
+df = df[df['Date_reported'] == pd.Timestamp.today().normalize() - pd.Timedelta(days = 1)]
 df = df[['Date_reported', 'Country', 'Country_code', 'Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths']]
 df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m-%d')
 

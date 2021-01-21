@@ -20,7 +20,7 @@ PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath('data').resolve()
 
 app = dash.Dash(
-    __name__, meta_tags=[{'name': 'viewport', 'content': 'width=device-width'}]
+    __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
 )
 server = app.server
 
@@ -51,148 +51,148 @@ points = pickle.load(open(DATA_PATH.joinpath('points.pkl'), 'rb'))
 # Load data
 df = pd.read_csv(
     'https://github.com/plotly/datasets/raw/master/dash-sample-apps/dash-oil-and-gas/data/wellspublic.csv',
-    low_memory=False,
+    low_memory = False,
 )
 df['Date_Well_Completed'] = pd.to_datetime(df['Date_Well_Completed'])
 df = df[df['Date_Well_Completed'] > dt.datetime(1960, 1, 1)]
 
 trim = df[['API_WellNo', 'Well_Type', 'Well_Name']]
 trim.index = trim['API_WellNo']
-dataset = trim.to_dict(orient='index')
+dataset = trim.to_dict(orient = 'index')
 
 
 # Create global chart template
 mapbox_access_token = 'pk.eyJ1IjoicGxvdGx5bWFwYm94IiwiYSI6ImNrOWJqb2F4djBnMjEzbG50amg0dnJieG4ifQ.Zme1-Uzoi75IaFbieBDl3A'
 
-layout = dict(
-    autosize=True,
-    automargin=True,
-    margin=dict(l=30, r=30, b=20, t=40),
-    hovermode='closest',
-    plot_bgcolor='#F9F9F9',
-    paper_bgcolor='#F9F9F9',
-    legend=dict(font=dict(size=10), orientation='h'),
-    title='Satellite Overview',
-    mapbox=dict(
-        accesstoken=mapbox_access_token,
-        style='light',
-        center=dict(lon=-78.05, lat=42.54),
-        zoom=7,
-    ),
-)
+layout = dict(autosize = True,
+              automargin = True,
+              margin = dict(l = 30,
+                            r = 30,
+                            b = 20,
+                            t = 40),
+              hovermode = 'closest',
+              plot_bgcolor = '#F9F9F9',
+              paper_bgcolor = '#F9F9F9',
+              legend = dict(font = dict(size = 10),
+              orientation = 'h'),
+              title = 'Satellite Overview',
+              mapbox = dict(accesstoken = mapbox_access_token,
+                          style = 'light',
+                          center = dict(lon = -78.05, lat = 42.54),
+                          zoom = 7,),)
 
 # Create app layout
 app.layout = html.Div(
     [
-        dcc.Store(id='aggregate_data'),
+        dcc.Store(id = 'aggregate_data'),
         # empty Div to trigger javascript file for graph resizing
-        html.Div(id='output-clientside'),
+        html.Div(id = 'output-clientside'),
         html.Div(
             [
                 html.Div(
                     [
                         html.P(
                             'Filter by construction date (or select range in histogram):',
-                            className='control_label',
+                            className = 'control_label',
                         ),
                         dcc.RangeSlider(
-                            id='year_slider',
-                            min=1960,
-                            max=2017,
-                            value=[1990, 2010],
-                            className='dcc_control',
+                            id = 'year_slider',
+                            min = 1960,
+                            max = 2017,
+                            value = [1990, 2010],
+                            className = 'dcc_control',
                         ),
-                        html.P('Filter by well status:', className='control_label'),
+                        html.P('Filter by well status:', className = 'control_label'),
                         dcc.RadioItems(
-                            id='well_status_selector',
-                            options=[
+                            id = 'well_status_selector',
+                            options = [
                                 {'label': 'All ', 'value': 'all'},
                                 {'label': 'Active only ', 'value': 'active'},
                                 {'label': 'Customize ', 'value': 'custom'},
                             ],
-                            value='active',
-                            labelStyle={'display': 'inline-block'},
-                            className='dcc_control',
+                            value = 'active',
+                            labelStyle = {'display': 'inline-block'},
+                            className = 'dcc_control',
                         ),
                         dcc.Dropdown(
-                            id='well_statuses',
-                            options=well_status_options,
-                            multi=True,
-                            value=list(WELL_STATUSES.keys()),
-                            className='dcc_control',
+                            id = 'well_statuses',
+                            options = well_status_options,
+                            multi = True,
+                            value = list(WELL_STATUSES.keys()),
+                            className = 'dcc_control',
                         ),
                         dcc.Checklist(
-                            id='lock_selector',
-                            options=[{'label': 'Lock camera', 'value': 'locked'}],
-                            className='dcc_control',
-                            value=[],
+                            id = 'lock_selector',
+                            options = [{'label': 'Lock camera', 'value': 'locked'}],
+                            className = 'dcc_control',
+                            value = [],
                         ),
-                        html.P('Filter by well type:', className='control_label'),
+                        html.P('Filter by well type:', className = 'control_label'),
                         dcc.RadioItems(
-                            id='well_type_selector',
-                            options=[
+                            id = 'well_type_selector',
+                            options = [
                                 {'label': 'All ', 'value': 'all'},
                                 {'label': 'Productive only ', 'value': 'productive'},
                                 {'label': 'Customize ', 'value': 'custom'},
                             ],
-                            value='productive',
-                            labelStyle={'display': 'inline-block'},
-                            className='dcc_control',
+                            value = 'productive',
+                            labelStyle = {'display': 'inline-block'},
+                            className = 'dcc_control',
                         ),
                         dcc.Dropdown(
-                            id='well_types',
-                            options=well_type_options,
-                            multi=True,
-                            value=list(WELL_TYPES.keys()),
-                            className='dcc_control',
+                            id = 'well_types',
+                            options = well_type_options,
+                            multi = True,
+                            value = list(WELL_TYPES.keys()),
+                            className = 'dcc_control',
                         ),
                     ],
-                    className='pretty_container four columns',
-                    id='cross-filter-options',
+                    className = 'pretty_container four columns',
+                    id = 'cross-filter-options',
                 ),
                 html.Div(
                     [
                         html.Div(
-                            [dcc.Graph(id='count_graph')],
-                            id='countGraphContainer',
-                            className='pretty_container',
+                            [dcc.Graph(id = 'count_graph')],
+                            id = 'countGraphContainer',
+                            className = 'pretty_container',
                         ),
                     ],
-                    id='right-column',
-                    className='eight columns',
+                    id = 'right-column',
+                    className = 'eight columns',
                 ),
             ],
-            className='row flex-display',
+            className = 'row flex-display',
         ),
         html.Div(
             [
                 html.Div(
-                    [dcc.Graph(id='main_graph')],
-                    className='pretty_container seven columns',
+                    [dcc.Graph(id = 'main_graph')],
+                    className = 'pretty_container seven columns',
                 ),
                 html.Div(
-                    [dcc.Graph(id='individual_graph')],
-                    className='pretty_container five columns',
+                    [dcc.Graph(id = 'individual_graph')],
+                    className = 'pretty_container five columns',
                 ),
             ],
-            className='row flex-display',
+            className = 'row flex-display',
         ),
         html.Div(
             [
                 html.Div(
-                    [dcc.Graph(id='pie_graph')],
-                    className='pretty_container seven columns',
+                    [dcc.Graph(id = 'pie_graph')],
+                    className = 'pretty_container seven columns',
                 ),
                 html.Div(
-                    [dcc.Graph(id='aggregate_graph')],
-                    className='pretty_container five columns',
+                    [dcc.Graph(id = 'aggregate_graph')],
+                    className = 'pretty_container five columns',
                 ),
             ],
-            className='row flex-display',
+            className = 'row flex-display',
         ),
     ],
-    id='mainContainer',
-    style={'display': 'flex', 'flex-direction': 'column'},
+    id = 'mainContainer',
+    style = {'display': 'flex', 'flex-direction': 'column'},
 )
 
 
@@ -279,7 +279,7 @@ def produce_aggregate(selected, year_slider):
 
 # Create callbacks
 app.clientside_callback(
-    ClientsideFunction(namespace='clientside', function_name='resize'),
+    ClientsideFunction(namespace = 'clientside', function_name = 'resize'),
     Output('output-clientside', 'children'),
     [Input('count_graph', 'figure')],
 )
@@ -332,7 +332,7 @@ def update_year_slider(count_graph_selected):
 
     nums = [int(point['pointNumber']) for point in count_graph_selected['points']]
     return [min(nums) + 1960, max(nums) + 1961]
-    
+
 
 # Selectors -> main graph
 @app.callback(
@@ -353,13 +353,13 @@ def make_main_figure(
     traces = []
     for well_type, dfff in dff.groupby('Well_Type'):
         trace = dict(
-            type='scattermapbox',
-            lon=dfff['Surface_Longitude'],
-            lat=dfff['Surface_latitude'],
-            text=dfff['Well_Name'],
-            customdata=dfff['API_WellNo'],
-            name=WELL_TYPES[well_type],
-            marker=dict(size=4, opacity=0.6),
+            type = 'scattermapbox',
+            lon = dfff['Surface_Longitude'],
+            lat = dfff['Surface_latitude'],
+            text = dfff['Well_Name'],
+            customdata = dfff['API_WellNo'],
+            name = WELL_TYPES[well_type],
+            marker = dict(size = 4, opacity = 0.6),
         )
         traces.append(trace)
 
@@ -373,7 +373,7 @@ def make_main_figure(
             layout['mapbox']['center']['lat'] = lat
             layout['mapbox']['zoom'] = zoom
 
-    figure = dict(data=traces, layout=layout)
+    figure = dict(data = traces, layout = layout)
     return figure
 
 
@@ -395,49 +395,49 @@ def make_individual_figure(main_graph_hover):
 
     if index is None:
         annotation = dict(
-            text='No data available',
-            x=0.5,
-            y=0.5,
-            align='center',
-            showarrow=False,
-            xref='paper',
-            yref='paper',
+            text = 'No data available',
+            x = 0.5,
+            y = 0.5,
+            align = 'center',
+            showarrow = False,
+            xref = 'paper',
+            yref = 'paper',
         )
         layout_individual['annotations'] = [annotation]
         data = []
     else:
         data = [
             dict(
-                type='scatter',
-                mode='lines+markers',
-                name='Gas Produced (mcf)',
-                x=index,
-                y=gas,
-                line=dict(shape='spline', smoothing=2, width=1, color='#fac1b7'),
-                marker=dict(symbol='diamond-open'),
+                type = 'scatter',
+                mode = 'lines+markers',
+                name = 'Gas Produced (mcf)',
+                x = index,
+                y = gas,
+                line = dict(shape = 'spline', smoothing = 2, width = 1, color = '#fac1b7'),
+                marker = dict(symbol = 'diamond-open'),
             ),
             dict(
-                type='scatter',
-                mode='lines+markers',
-                name='Oil Produced (bbl)',
-                x=index,
-                y=oil,
-                line=dict(shape='spline', smoothing=2, width=1, color='#a9bb95'),
-                marker=dict(symbol='diamond-open'),
+                type = 'scatter',
+                mode = 'lines+markers',
+                name = 'Oil Produced (bbl)',
+                x = index,
+                y = oil,
+                line = dict(shape = 'spline', smoothing = 2, width = 1, color = '#a9bb95'),
+                marker = dict(symbol = 'diamond-open'),
             ),
             dict(
-                type='scatter',
-                mode='lines+markers',
-                name='Water Produced (bbl)',
-                x=index,
-                y=water,
-                line=dict(shape='spline', smoothing=2, width=1, color='#92d8d8'),
-                marker=dict(symbol='diamond-open'),
+                type = 'scatter',
+                mode = 'lines+markers',
+                name = 'Water Produced (bbl)',
+                x = index,
+                y = water,
+                line = dict(shape = 'spline', smoothing = 2, width = 1, color = '#92d8d8'),
+                marker = dict(symbol = 'diamond-open'),
             ),
         ]
         layout_individual['title'] = dataset[chosen[0]]['Well_Name']
 
-    figure = dict(data=data, layout=layout_individual)
+    figure = dict(data = data, layout = layout_individual)
     return figure
 
 
@@ -471,33 +471,33 @@ def make_aggregate_figure(well_statuses, well_types, year_slider, main_graph_hov
 
     data = [
         dict(
-            type='scatter',
-            mode='lines',
-            name='Gas Produced (mcf)',
-            x=index,
-            y=gas,
-            line=dict(shape='spline', smoothing='2', color='#F9ADA0'),
+            type = 'scatter',
+            mode = 'lines',
+            name = 'Gas Produced (mcf)',
+            x = index,
+            y = gas,
+            line = dict(shape = 'spline', smoothing = '2', color = '#F9ADA0'),
         ),
         dict(
-            type='scatter',
-            mode='lines',
-            name='Oil Produced (bbl)',
-            x=index,
-            y=oil,
-            line=dict(shape='spline', smoothing='2', color='#849E68'),
+            type = 'scatter',
+            mode = 'lines',
+            name = 'Oil Produced (bbl)',
+            x = index,
+            y = oil,
+            line = dict(shape = 'spline', smoothing = '2', color = '#849E68'),
         ),
         dict(
-            type='scatter',
-            mode='lines',
-            name='Water Produced (bbl)',
-            x=index,
-            y=water,
-            line=dict(shape='spline', smoothing='2', color='#59C3C3'),
+            type = 'scatter',
+            mode = 'lines',
+            name = 'Water Produced (bbl)',
+            x = index,
+            y = water,
+            line = dict(shape = 'spline', smoothing = '2', color = '#59C3C3'),
         ),
     ]
     layout_aggregate['title'] = 'Aggregate: ' + WELL_TYPES[well_type]
 
-    figure = dict(data=data, layout=layout_aggregate)
+    figure = dict(data = data, layout = layout_aggregate)
     return figure
 
 
@@ -523,42 +523,42 @@ def make_pie_figure(well_statuses, well_types, year_slider):
 
     data = [
         dict(
-            type='pie',
-            labels=['Gas', 'Oil', 'Water'],
-            values=[sum(gas), sum(oil), sum(water)],
-            name='Production Breakdown',
-            text=[
+            type = 'pie',
+            labels = ['Gas', 'Oil', 'Water'],
+            values = [sum(gas), sum(oil), sum(water)],
+            name = 'Production Breakdown',
+            text = [
                 'Total Gas Produced (mcf)',
                 'Total Oil Produced (bbl)',
                 'Total Water Produced (bbl)',
             ],
-            hoverinfo='text+value+percent',
-            textinfo='label+percent+name',
-            hole=0.5,
-            marker=dict(colors=['#fac1b7', '#a9bb95', '#92d8d8']),
-            domain={'x': [0, 0.45], 'y': [0.2, 0.8]},
+            hoverinfo = 'text+value+percent',
+            textinfo = 'label+percent+name',
+            hole = 0.5,
+            marker = dict(colors = ['#fac1b7', '#a9bb95', '#92d8d8']),
+            domain = {'x': [0, 0.45], 'y': [0.2, 0.8]},
         ),
         dict(
-            type='pie',
-            labels=[WELL_TYPES[i] for i in aggregate.index],
-            values=aggregate['API_WellNo'],
-            name='Well Type Breakdown',
-            hoverinfo='label+text+value+percent',
-            textinfo='label+percent+name',
-            hole=0.5,
-            marker=dict(colors=[WELL_COLORS[i] for i in aggregate.index]),
-            domain={'x': [0.55, 1], 'y': [0.2, 0.8]},
+            type = 'pie',
+            labels = [WELL_TYPES[i] for i in aggregate.index],
+            values = aggregate['API_WellNo'],
+            name = 'Well Type Breakdown',
+            hoverinfo = 'label+text+value+percent',
+            textinfo = 'label+percent+name',
+            hole = 0.5,
+            marker = dict(colors = [WELL_COLORS[i] for i in aggregate.index]),
+            domain = {'x': [0.55, 1], 'y': [0.2, 0.8]},
         ),
     ]
     layout_pie['title'] = 'Production Summary: {} to {}'.format(
         year_slider[0], year_slider[1]
     )
-    layout_pie['font'] = dict(color='#777777')
+    layout_pie['font'] = dict(color = '#777777')
     layout_pie['legend'] = dict(
-        font=dict(color='#CCCCCC', size='10'), orientation='h', bgcolor='rgba(0,0,0,0)'
+        font = dict(color = '#CCCCCC', size = '10'), orientation = 'h', bgcolor = 'rgba(0,0,0,0)'
     )
 
-    figure = dict(data=data, layout=layout_pie)
+    figure = dict(data = data, layout = layout_pie)
     return figure
 
 
@@ -589,20 +589,20 @@ def make_count_figure(well_statuses, well_types, year_slider):
 
     data = [
         dict(
-            type='scatter',
-            mode='markers',
-            x=g.index,
-            y=g['API_WellNo'] / 2,
-            name='All Wells',
-            opacity=0,
-            hoverinfo='skip',
+            type = 'scatter',
+            mode = 'markers',
+            x = g.index,
+            y = g['API_WellNo'] / 2,
+            name = 'All Wells',
+            opacity = 0,
+            hoverinfo = 'skip',
         ),
         dict(
-            type='bar',
-            x=g.index,
-            y=g['API_WellNo'],
-            name='All Wells',
-            marker=dict(color=colors),
+            type = 'bar',
+            x = g.index,
+            y = g['API_WellNo'],
+            name = 'All Wells',
+            marker = dict(color = colors),
         ),
     ]
 
@@ -611,10 +611,10 @@ def make_count_figure(well_statuses, well_types, year_slider):
     layout_count['showlegend'] = False
     layout_count['autosize'] = True
 
-    figure = dict(data=data, layout=layout_count)
+    figure = dict(data = data, layout = layout_count)
     return figure
 
 
 # Main
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug = True)

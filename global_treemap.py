@@ -14,18 +14,14 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 import pprint
 from dataframe import dataframe as df
-
-
-df = df[['Date_reported', 'Country', 'Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths']]
-df = df.groupby(['Country', 'Region', pd.Grouper(key = 'Date_reported', freq = 'M')]).agg({'New_cases':'sum', 'Cumulative_cases':'sum', 'Cumulative_deaths':'sum'}).reset_index()
-df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m')
-
 import plotly.express as px
-import numpy as np
-df = px.data.gapminder().query('year == 2007')
+
+
+df = df[['Country', 'Region', 'Cumulative_cases']]
+#df = df[df['Cumulative_cases'] >= 1_000_000]
+
 fig = px.treemap(df,
-                 path = [px.Constant('world'), 'continent', 'country'],
-                 values = 'pop',
-                 color = 'lifeExp', hover_data = ['iso_alpha'])
+                 path = [px.Constant('World'), 'Region', 'Country'],
+                 values = 'Cumulative_cases')
 
 fig.show()

@@ -15,11 +15,6 @@ import plotly.graph_objects as go
 import pprint
 from dataframe import dataframe as df
 
-app = dash.Dash(
-    __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
-)
-server = app.server
-
 df = df[['Date_reported', 'Country', 'Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths']]
 df = df.groupby(['Country', 'Region', pd.Grouper(key = 'Date_reported', freq = 'M')]).agg({'New_cases':'sum', 'Cumulative_cases':'sum', 'Cumulative_deaths':'sum'}).reset_index()
 df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m')
@@ -32,14 +27,4 @@ fig = px.sunburst(df,
                   color = 'lifeExp',
                   hover_data = ['iso_alpha'])
 
-app.layout = html.Div([
-    dcc.Graph(
-        id = 'corona',
-        figure = fig
-    )
-])
-
-
-# Main
-if __name__ == '__main__':
-    app.run_server(debug = True)
+fig.show()

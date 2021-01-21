@@ -15,10 +15,6 @@ import plotly.graph_objects as go
 import pprint
 from dataframe import dataframe as df
 
-app = dash.Dash(
-    __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
-)
-server = app.server
 
 df = df[df['New_cases'] > 0]
 
@@ -32,15 +28,4 @@ fig = px.histogram(df,
                    barmode = 'overlay',
                    labels = {'New_cases':'New Cases', 'Date_reported':'Date Reported', 'WHO_region':'Region'})
 
-
-app.layout = html.Div([
-    dcc.Graph(
-        id = 'corona',
-        figure = fig
-    )
-])
-
-
-# Main
-if __name__ == '__main__':
-    app.run_server(debug = True)
+fig.show()

@@ -62,7 +62,7 @@ dataset = trim.to_dict(orient = 'index')
 
 
 # Create global chart template
-mapbox_access_token = 'pk.eyJ1IjoicGxvdGx5bWFwYm94IiwiYSI6ImNrOWJqb2F4djBnMjEzbG50amg0dnJieG4ifQ.Zme1-Uzoi75IaFbieBDl3A'
+mapbox_access_token = 'pk.eyJ1IjoiY2FhbGFyIiwiYSI6ImNraWNndndpeDBobGEydWxnM3JoMTdtdjUifQ.ow8XSBbLzZUWHg1K-HF4zg'
 
 layout = dict(autosize = True,
               automargin = True,

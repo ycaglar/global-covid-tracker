@@ -10,6 +10,7 @@ fig = px.histogram(df,
                    color = 'Region',
                    hover_data = df.columns,
                    barmode = 'overlay',
-                   labels = {'New_cases':'New Cases', 'Date_reported':'Date Reported', 'WHO_region':'Region'})
+                   labels = {'New_cases':'New Cases', 'Date_reported':'Date Reported', 'WHO_region':'Region'},
+                   title = 'Progress of New Cases per Region')
 
 fig.show()

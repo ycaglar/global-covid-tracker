@@ -23,6 +23,7 @@ fig = px.scatter(df,
                  labels = {'Cumulative_cases':'Cumulative Cases',
                            'Cumulative_deaths':'Cumulative Deaths',
                            'Date_reported':'Date Reported',
-                           'New_cases':'New Cases',})
+                           'New_cases':'New Cases',},
+                 title = 'Animated Progress History of Covid-19')
 
 fig.show()

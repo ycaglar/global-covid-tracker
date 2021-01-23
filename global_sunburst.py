@@ -11,6 +11,7 @@ fig = px.sunburst(df,
                   path = ['Region', 'Country'],
                   values = 'Population',
                   color = 'Cumulative_cases',
-                  hover_data = ['Population', 'Cumulative_cases'])
+                  hover_data = ['Population', 'Cumulative_cases'],
+                  title = 'Global Distribution of Cumulative Cases by Region')
 
 fig.show()

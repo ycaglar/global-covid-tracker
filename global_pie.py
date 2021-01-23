@@ -1,5 +1,5 @@
 import plotly.express as px
-from dataframe import dataframe as df
+from data_store import dataframe as df
 
 
 df = df[['Country', 'Cumulative_cases']]

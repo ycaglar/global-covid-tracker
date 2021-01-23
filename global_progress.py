@@ -1,7 +1,6 @@
-import datetime as dt
 import pandas as pd
 import plotly.express as px
-from dataframe import dataframe as df
+from data_store import dataframe as df
 
 
 df = df[['Date_reported', 'Country', 'Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths']]

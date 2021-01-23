@@ -1,6 +1,5 @@
-from dataframe import dataframe as df
+from data_store import dataframe as df
 import plotly.express as px
-import numpy as np
 import pandas as pd
 
 df = df[df['Date_reported'] == pd.Timestamp.today().normalize() - pd.Timedelta(days = 1)]

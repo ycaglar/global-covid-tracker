@@ -9,5 +9,4 @@ fig = px.pie(df,
              values = 'Cumulative_cases',
              names = 'Country',
              title = 'Major Outbrakes Around the World')
-
-fig.show()
+fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})

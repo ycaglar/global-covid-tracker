@@ -25,3 +25,4 @@ fig = px.scatter(df,
                            'Date_reported':'Date Reported',
                            'New_cases':'New Cases',},
                  title = 'Animated Progress History of Covid-19')
+fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})

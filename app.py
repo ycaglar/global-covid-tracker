@@ -5,6 +5,8 @@ from global_choropleth import fig as global_choropleth
 from global_treemap import fig as global_treemap
 from global_histogram import fig as global_histogram
 from global_progress import fig as global_progress
+from global_sunburst import fig as global_sunburst
+from global_pie import fig as global_pie
 
 app = dash.Dash(
     __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
@@ -65,7 +67,7 @@ app.layout = html.Div(
                             className = 'pretty_container',
                         ),
                     ],
-                    id = 'middle-column-treemap',
+                    id = 'single-column-treemap',
                     className = 'twelve columns',
                 )
             ]
@@ -81,11 +83,56 @@ app.layout = html.Div(
                             className = 'pretty_container',
                         )
                     ],
-                    id = 'middle-column-histogram',
+                    id = 'single-column-histogram',
                     className = 'twelve columns',
                 )
             ]
-        )
+        ),
+        html.Div(
+            [
+                html.Div(
+                    [
+                        html.Div(
+                            [dcc.Graph(id = 'global_progress',
+                                       figure = global_progress)],
+                            id = 'globalProgressContainer',
+                            className = 'pretty_container',
+                        )
+                    ],
+                    id = 'single-column-progress',
+                    className = 'twelve columns',
+                )
+            ]
+        ),
+        html.Div(
+            [
+                html.Div(
+                    [
+                        html.Div(
+                            [dcc.Graph(id = 'global_sunburst',
+                                       figure = global_sunburst)],
+                            id = 'globalSunburstContainer',
+                            className = 'pretty_container',
+                        ),
+                    ],
+                    #id = 'left-column-sunburst',
+                    className = 'six columns'
+                ),
+                html.Div(
+                    [
+                        html.Div(
+                            [dcc.Graph(id = 'global_pie',
+                                       figure = global_pie)],
+                            id = 'globalPieContainer',
+                            className = 'pretty_container',
+                        ),
+                    ],
+                    #id = 'right-column-pie',
+                    className = 'six columns',
+                )
+            ],
+            className = 'row flex-display',
+        ),
     ],
     id = 'mainContainer',
     style = {'display': 'flex', 'flex-direction': 'column'},

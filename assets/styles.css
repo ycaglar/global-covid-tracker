@@ -102,7 +102,7 @@ body {
   position: relative;
   box-shadow: 2px 2px 2px lightgrey;
 }
-#middle-column,
+#single-column,
 #right-column {
     display: flex;
     flex-direction: column;

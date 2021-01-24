@@ -2,6 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from global_choropleth import fig as global_choropleth
+from global_treemap import fig as global_treemap
 
 app = dash.Dash(
     __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
@@ -20,14 +21,14 @@ app.layout = html.Div(
                     [
                         html.Div([
                             html.H3('Live Status'),
-                            # html.H4('600,790'),
-                            # 'New Cases',
-                            # html.H4('96,877,399'),
-                            # 'Cumulative Cases',
-                            # html.H4('3,879'),
-                            # 'New Deaths',
-                            # html.H4('2,098,879'),
-                            # 'Cumulative Deaths'
+                            html.H4('600,790'),
+                            'New Cases',
+                            html.H4('96,877,399'),
+                            'Cumulative Cases',
+                            html.H4('3,879'),
+                            'New Deaths',
+                            html.H4('2,098,879'),
+                            'Cumulative Deaths'
                             ],
                             id = 'liveStatusContainer',
                             className = 'pretty_container',
@@ -50,6 +51,22 @@ app.layout = html.Div(
                 )
             ],
             className = 'row flex-display',
+        ),
+        html.Div(
+            [
+                html.Div(
+                    [
+                        html.Div(
+                            [dcc.Graph(id = 'global_treemap',
+                                       figure = global_treemap)],
+                            id = 'globalTreemapContainer',
+                            className = 'pretty_container',
+                        ),
+                    ],
+                    id = 'right-column-2',
+                    className = 'thirteen columns',
+                )
+            ]
         )
     ],
     id = 'mainContainer',

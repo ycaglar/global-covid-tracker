@@ -17,4 +17,6 @@ names = {'Bolivia (Plurinational State of)':'Bolivia',
          'Sint Maarten (Dutch part)':'Sint Maarten',
          'The United Kingdom':'United Kingdom',
          'Wallis and Futuna Islands':'Wallis and Futuna',
-         'Côte d\'Ivoire':'Côte d’Ivoire'}
+         'Côte d\'Ivoire':'Côte d’Ivoire',
+         'United States of America':'United States',
+         'Russian Federation':'Russia'}

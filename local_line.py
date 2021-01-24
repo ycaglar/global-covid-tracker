@@ -1,7 +1,7 @@
 import plotly.express as px
 from data_store import dataframe as df
 
-df = df[df['Country'] == 'United States of America']
+df = df[df['Country'] == 'United States']
 df = df[df['New_cases'] > 4_000]
 
 fig = px.line(df,

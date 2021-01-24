@@ -3,6 +3,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 from global_choropleth import fig as global_choropleth
 from global_treemap import fig as global_treemap
+from global_histogram import fig as global_histogram
+from global_progress import fig as global_progress
 
 app = dash.Dash(
     __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
@@ -63,7 +65,23 @@ app.layout = html.Div(
                             className = 'pretty_container',
                         ),
                     ],
-                    id = 'right-column-2',
+                    id = 'middle-column-treemap',
+                    className = 'twelve columns',
+                )
+            ]
+        ),
+        html.Div(
+            [
+                html.Div(
+                    [
+                        html.Div(
+                            [dcc.Graph(id = 'global_histogram',
+                                       figure = global_histogram)],
+                            id = 'globalHistogramContainer',
+                            className = 'pretty_container',
+                        )
+                    ],
+                    id = 'middle-column-histogram',
                     className = 'twelve columns',
                 )
             ]

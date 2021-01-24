@@ -25,5 +25,3 @@ fig = px.scatter(df,
                            'Date_reported':'Date Reported',
                            'New_cases':'New Cases',},
                  title = 'Animated Progress History of Covid-19')
-
-fig.show()

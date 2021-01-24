@@ -12,5 +12,4 @@ fig = px.histogram(df,
                    barmode = 'overlay',
                    labels = {'New_cases':'New Cases', 'Date_reported':'Date Reported', 'WHO_region':'Region'},
                    title = 'Progress History of New Cases by Region')
-
-fig.show()
+fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})

@@ -7,6 +7,7 @@ from global_histogram import fig as global_histogram
 from global_progress import fig as global_progress
 from global_sunburst import fig as global_sunburst
 from global_pie import fig as global_pie
+from local_line import fig as local_line
 
 app = dash.Dash(
     __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
@@ -115,7 +116,7 @@ app.layout = html.Div(
                             className = 'pretty_container',
                         ),
                     ],
-                    #id = 'left-column-sunburst',
+                    id = 'small-column-sunburst',
                     className = 'six columns'
                 ),
                 html.Div(
@@ -127,8 +128,60 @@ app.layout = html.Div(
                             className = 'pretty_container',
                         ),
                     ],
-                    #id = 'right-column-pie',
+                    id = 'small-column-pie',
                     className = 'six columns',
+                )
+            ],
+            className = 'row flex-display',
+        ),
+        html.Div(
+            [
+                html.Div(
+                    [
+                        html.Div([
+                            html.Label('Dropdown'),
+                                dcc.Dropdown(
+                                    options=[
+                                        {'label': 'New York City', 'value': 'NYC'},
+                                        {'label': u'Montréal', 'value': 'MTL'},
+                                        {'label': 'San Francisco', 'value': 'SF'}
+                                    ],
+                                    value='MTL'
+                                ),
+                            html.Label('Radio Items'),
+                                dcc.RadioItems(
+                                    options=[
+                                        {'label': 'New York City', 'value': 'NYC'},
+                                        {'label': u'Montréal', 'value': 'MTL'}
+                                    ],
+                                    value='MTL'
+                                ),
+                            html.Label('Slider'),
+                                dcc.Slider(
+                                    min=0,
+                                    max=9,
+                                    marks={i: 'Label {}'.format(i) if i == 1 else str(i) for i in range(1, 6)},
+                                    value=5,
+                                ),
+                            ],
+                            id = 'localTweakContainer',
+                            className = 'pretty_container',
+                        ),
+                    ],
+                    id = 'left-column-local-tweak',
+                    className = 'four columns'
+                ),
+                html.Div(
+                    [
+                        html.Div(
+                            [dcc.Graph(id = 'local_line',
+                                       figure = local_line)],
+                            id = 'localLineContainer',
+                            className = 'pretty_container',
+                        ),
+                    ],
+                    id = 'right-column-local-line',
+                    className = 'eleven columns',
                 )
             ],
             className = 'row flex-display',

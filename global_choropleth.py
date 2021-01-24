@@ -14,4 +14,4 @@ fig = px.choropleth(df,
                     color_continuous_scale = px.colors.sequential.Plasma,
                     labels = {'New_cases':'New Cases'})
 fig.update_geos(projection_type = 'orthographic')
-fig.update_layout(height = 500, margin = {'r':0,'t':10,'l':0,'b':10})
+fig.update_layout(margin = {'r':0,'t':10,'l':0,'b':10})

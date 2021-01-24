@@ -24,6 +24,7 @@ body {
   padding: 15px;
   position: relative;
   box-shadow: 2px 2px 2px lightgrey;
+  height: 100%;
 }
 
 .bare_container {
@@ -103,8 +104,13 @@ body {
 }
 
 #right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+#left-column {
   display: flex;
-  flex-direction: column;
+  flex-direction:column-reverse;
 }
 
 #wells {

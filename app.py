@@ -20,22 +20,21 @@ app.layout = html.Div(
                     [
                         html.Div([
                             html.H3('Live Status'),
-                            html.H4('600,790'),
-                            'New Cases',
-                            html.H4('96,877,399'),
-                            'Cumulative Cases',
-                            html.H4('3,879'),
-                            'New Deaths',
-                            html.H4('2,098,879'),
-                            'Cumulative Deaths'
+                            # html.H4('600,790'),
+                            # 'New Cases',
+                            # html.H4('96,877,399'),
+                            # 'Cumulative Cases',
+                            # html.H4('3,879'),
+                            # 'New Deaths',
+                            # html.H4('2,098,879'),
+                            # 'Cumulative Deaths'
                             ],
                             id = 'liveStatusContainer',
                             className = 'pretty_container',
                         ),
                     ],
                     id = 'left-column',
-                    className = 'three columns',
-                    style = {'height':'100%'}
+                    className = 'three columns'
                 ),
                 html.Div(
                     [

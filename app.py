@@ -47,7 +47,7 @@ app.layout = html.Div(
                         ),
                     ],
                     id = 'right-column',
-                    className = 'thirteen columns',
+                    className = 'ten columns',
                 )
             ],
             className = 'row flex-display',
@@ -64,7 +64,7 @@ app.layout = html.Div(
                         ),
                     ],
                     id = 'right-column-2',
-                    className = 'thirteen columns',
+                    className = 'twelve columns',
                 )
             ]
         )

@@ -20,6 +20,7 @@ app.layout = html.Div(
         dcc.Store(id = 'aggregate_data'),
         # empty Div to trigger javascript file for graph resizing
         html.Div(id = 'output-clientside'),
+        html.H1('GLOBAL COVID TRACKER'),
         html.Div(
             [
                 html.Div(

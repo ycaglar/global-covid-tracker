@@ -11,6 +11,6 @@ fig = px.treemap(df,
                  values = 'Population',
                  color = 'New_cases',
                  hover_data = ['Population', 'New_cases'],
-                 title = 'Global Distribution of New Cases by Region'
-                 )
+                 labels = {'New_cases':'Cases'},
+                 title = 'Global Distribution of New Cases by Region')
 fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})

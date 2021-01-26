@@ -21,7 +21,13 @@ app.layout = html.Div(
         dcc.Store(id = 'aggregate_data'),
         # empty Div to trigger javascript file for graph resizing
         html.Div(id = 'output-clientside'),
-        html.H1('GLOBAL COVID TRACKER'),
+        html.Img(
+            src=app.get_asset_url("banner-plain.jpeg"),
+            id="plotly-image",
+            style={
+                'object-fit':'cover'
+            },
+        ),
         html.Div(
             [
                 html.Div(

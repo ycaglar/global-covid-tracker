@@ -24,19 +24,14 @@ app.layout = html.Div(
         html.Div(
             [
                 html.Img(
-                    src = app.get_asset_url('banner.jpg'),
+                    src = app.get_asset_url('banner_module.jpg'),
                     #id="plotly-image",
-                    style={
-                        'width':'100%',
-                        'height':'auto'
-                    },
+                    style={'width':'100%',
+                           'height':'auto'},
                 )
 
             ],
-            style = {'background':'rgb(255, 0, 0)',
-                     'display':'flex',
-                     'flex-direction':'column',
-                     'height':'100%'}
+            style = { 'margin-top':'0' }
         ),
         html.Div(
             [
@@ -193,7 +188,7 @@ app.layout = html.Div(
         )
     ],
     id = 'mainContainer',
-    style = {'display': 'flex', 'flex-direction': 'column'},
+    style = {'display':'flex', 'flex-direction':'column', 'margin-top':'0'},
 )
 
 @app.callback(

@@ -1,6 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
 from global_choropleth import fig as global_choropleth
 from global_treemap import fig as global_treemap
 from global_histogram import fig as global_histogram
@@ -141,30 +142,16 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Div([
-                            html.Label('Dropdown'),
+                            html.Label('Country'),
                                 dcc.Dropdown(
+                                    id = 'local_line_input',
                                     options=[
-                                        {'label': 'New York City', 'value': 'NYC'},
-                                        {'label': u'Montréal', 'value': 'MTL'},
-                                        {'label': 'San Francisco', 'value': 'SF'}
+                                        {'label': 'United States', 'value': 'United States'},
+                                        {'label': 'Spain', 'value': 'Spain'},
+                                        {'label': 'India', 'value': 'India'}
                                     ],
-                                    value='MTL'
-                                ),
-                            html.Label('Radio Items'),
-                                dcc.RadioItems(
-                                    options=[
-                                        {'label': 'New York City', 'value': 'NYC'},
-                                        {'label': u'Montréal', 'value': 'MTL'}
-                                    ],
-                                    value='MTL'
-                                ),
-                            html.Label('Slider'),
-                                dcc.Slider(
-                                    min=0,
-                                    max=9,
-                                    marks={i: 'Label {}'.format(i) if i == 1 else str(i) for i in range(1, 6)},
-                                    value=5,
-                                ),
+                                    value='United States'
+                                )
                             ],
                             id = 'localTweakContainer',
                             className = 'pretty_container',
@@ -177,8 +164,7 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Div(
-                            [dcc.Graph(id = 'local_line',
-                                       figure = local_line)],
+                            [dcc.Graph(id = 'local_line_output')],
                             id = 'localLineContainer',
                             className = 'pretty_container',
                         ),
@@ -188,11 +174,18 @@ app.layout = html.Div(
                 )
             ],
             className = 'row flex-display',
-        ),
+        )
     ],
     id = 'mainContainer',
     style = {'display': 'flex', 'flex-direction': 'column'},
 )
+
+@app.callback(
+    Output(component_id='local_line_output', component_property='figure'),
+    Input(component_id='local_line_input', component_property='value')
+)
+def update_output_div(input_value):
+    return local_line(input_value)
 
 # Main
 if __name__ == '__main__':

@@ -21,12 +21,22 @@ app.layout = html.Div(
         dcc.Store(id = 'aggregate_data'),
         # empty Div to trigger javascript file for graph resizing
         html.Div(id = 'output-clientside'),
-        html.Img(
-            src=app.get_asset_url("banner-plain.jpeg"),
-            id="plotly-image",
-            style={
-                'object-fit':'cover'
-            },
+        html.Div(
+            [
+                html.Img(
+                    src = app.get_asset_url('banner.jpg'),
+                    #id="plotly-image",
+                    style={
+                        'width':'100%',
+                        'height':'auto'
+                    },
+                )
+
+            ],
+            style = {'background':'rgb(255, 0, 0)',
+                     'display':'flex',
+                     'flex-direction':'column',
+                     'height':'100%'}
         ),
         html.Div(
             [

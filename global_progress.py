@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 from data_store import dataframe as df
+import colors
 
 
 df = df[['Date_reported', 'Country', 'Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths']]
@@ -14,12 +15,7 @@ fig = px.scatter(df,
                  animation_group = 'Country',
                  size = 'New_cases',
                  color = 'Region',
-                 color_discrete_sequence = ['#c7e9b4',
-                                            '#7fcdbb',
-                                            '#41b6c4',
-                                            '#1d91c0',
-                                            '#225ea8',
-                                            '#253494'],
+                 color_discrete_sequence = colors.YlGnBu[2:8],
                  hover_name = 'Country',
                  log_x = True,
                  log_y = True,

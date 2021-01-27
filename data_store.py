@@ -22,6 +22,7 @@ covid_df = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-data.csv', l
 covid_df['Date_reported'] = pd.to_datetime(covid_df['Date_reported'])
 covid_df = covid_df[covid_df['WHO_region'] != 'Other']
 covid_df = covid_df[covid_df['New_cases'] >= 0]
+covid_df = covid_df[covid_df['New_deaths'] >= 0]
 covid_df['WHO_region'] = covid_df['WHO_region'].apply(lambda abbrevation:regions[abbrevation])
 covid_df = covid_df.rename(columns = {'WHO_region':'Region'})
 covid_df['Country'].replace(names, inplace = True)

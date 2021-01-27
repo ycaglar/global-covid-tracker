@@ -5,7 +5,6 @@ import colors
 def fig(country):
     df = dataframe
     df = df[df['Country'] == country]
-    df = df[df['New_cases'] > 4_000]
     fig = px.line(df,
                   x = 'Date_reported',
                   y = ['New_cases', 'New_deaths'],

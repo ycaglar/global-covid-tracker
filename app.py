@@ -156,12 +156,12 @@ app.layout = html.Div(
                             html.Label('Country'),
                                 dcc.Dropdown(
                                     id = 'local_line_input',
-                                    options=[
+                                    options = [
                                         {'label': 'United States', 'value': 'United States'},
                                         {'label': 'Spain', 'value': 'Spain'},
                                         {'label': 'India', 'value': 'India'}
                                     ],
-                                    value='United States'
+                                    value = 'United States'
                                 )
                             ],
                             id = 'localTweakContainer',

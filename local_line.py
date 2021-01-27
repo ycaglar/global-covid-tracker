@@ -8,6 +8,12 @@ def fig(country):
     fig = px.line(df,
                   x = 'Date_reported',
                   y = ['New_cases', 'New_deaths'],
+                   color_discrete_sequence = ['#c7e9b4',
+                                              '#7fcdbb',
+                                              '#41b6c4',
+                                              '#1d91c0',
+                                              '#225ea8',
+                                              '#253494'],
                   labels = {'Date_reported':'Date Reported', 'value':'New Cases & New Deaths', 'variable':'Variables'},
                   title = f'{country} Status Report')
     fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})

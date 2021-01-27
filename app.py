@@ -10,13 +10,14 @@ from global_sunburst import fig as global_sunburst
 from global_pie import fig as global_pie
 from local_line import fig as local_line
 from data_store import dataframe as df
+from data_store import global_df
 
 app = dash.Dash(
     __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
 )
 server = app.server
 
-country_options = [{"label": country, "value": country} 
+country_options = [{"label": country, "value": country}
                     for country in df[df['Cumulative_cases'] > 4_000]['Country'].drop_duplicates()]
 
 # Create app layout
@@ -42,19 +43,24 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Div([
-                            html.H3('Live Status'),
-                            html.H4('600,790'),
+                            html.Div(
+                                [
+                                    html.H3('Live Status')
+                                ],
+                                style = {'margin-bottom':'15%', 'text-align':'center'}
+                            ),
+                            html.H4(global_df['New_cases']),
                             'New Cases',
-                            html.H4('96,877,399'),
+                            html.H4(global_df['Cumulative_cases']),
                             'Cumulative Cases',
-                            html.H4('3,879'),
+                            html.H4(global_df['New_deaths']),
                             'New Deaths',
-                            html.H4('2,098,879'),
+                            html.H4(global_df['Cumulative_cases']),
                             'Cumulative Deaths'
                             ],
                             id = 'liveStatusContainer',
                             className = 'pretty_container',
-                            style = {'height': '100%'},
+                            style = {'height': '100%', 'color':'#373737', 'text-align':'right'},
                         ),
                     ],
                     id = 'left-column',

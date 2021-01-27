@@ -13,6 +13,6 @@ fig = px.treemap(df,
                  color = df['New_cases'].apply(lambda new_cases:log(new_cases) if new_cases > 1 else new_cases),
                  color_continuous_scale = 'ylgnbu',
                  hover_data = ['Population', 'New_cases'],
-                 labels = {'New_cases':'Cases', 'color':'cases'},
+                 labels = {'New_cases':'Cases', 'color':'Cases'},
                  title = 'Global Distribution of New Cases by Region')
 fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})

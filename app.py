@@ -166,14 +166,28 @@ app.layout = html.Div(
                             [
                                 html.Label('Country'),
                                 dcc.Dropdown(
-                                    id = 'local_line_input',
+                                    id = 'country_selector',
                                     options = country_options,
                                     value = 'United States'
+                                ),
+                                html.Div(
+                                    [
+                                        html.P('Population', style = {'font-weight':'bold'}),
+                                        html.P(id = 'country_population'),
+                                        html.P('Cumulative Cases'),
+                                        html.P(id = 'country_cumulative_cases'),
+                                        html.P('Cumulative Deaths'),
+                                        html.P(id = 'country_cumulative_deaths')
+                                    ],
+
+                                    style = {
+                                        'margin-top':'5%'
+                                    }
                                 ),
                                 html.Img(
                                     id = 'country_flag',
                                     style = {'width':'100%',
-                                            'margin':'auto 0 0 0'}
+                                            'margin':'auto 0 0 0'},
                                 )
                             ],
                             id = 'localTweakContainer',
@@ -189,7 +203,7 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.Div(
-                            [dcc.Graph(id = 'local_line_output')],
+                            [dcc.Graph(id = 'country_figure')],
                             id = 'localLineContainer',
                             className = 'pretty_container',
                         ),
@@ -206,12 +220,20 @@ app.layout = html.Div(
 )
 
 @app.callback(
-    Output(component_id='local_line_output', component_property='figure'),
-    Output('country_flag','src'),
-    Input(component_id='local_line_input', component_property='value')
+    Output(component_id = 'country_figure', component_property = 'figure'),
+    Output(component_id = 'country_flag', component_property = 'src'),
+    Output(component_id = 'country_population', component_property = 'children'),
+    Output(component_id = 'country_cumulative_cases', component_property = 'children'),
+    Output(component_id = 'country_cumulative_deaths', component_property = 'children'),
+    Input(component_id = 'country_selector', component_property = 'value')
 )
 def update_output_div(input_value):
-    return local_line(input_value), app.get_asset_url('Flags/'+input_value+'.svg')
+    selected_df = df[df['Country'] == input_value].tail(1)
+    return local_line(input_value),\
+           app.get_asset_url('Flags/'+input_value+'.svg'),\
+           selected_df['Population'],\
+           selected_df['Cumulative_cases'],\
+           selected_df['Cumulative_deaths']
 
 # Main
 if __name__ == '__main__':

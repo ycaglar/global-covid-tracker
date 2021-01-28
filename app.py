@@ -171,8 +171,7 @@ app.layout = html.Div(
                                     value = 'United States'
                                 ),
                                 html.Img(
-                                    src = app.get_asset_url('United States.svg'),
-                                    id = 'plotly-image',
+                                    id = 'country_flag',
                                     style = {'width':'100%',
                                             'margin':'auto 0 0 0'}
                                 )
@@ -208,10 +207,11 @@ app.layout = html.Div(
 
 @app.callback(
     Output(component_id='local_line_output', component_property='figure'),
+    Output('country_flag','src'),
     Input(component_id='local_line_input', component_property='value')
 )
 def update_output_div(input_value):
-    return local_line(input_value)
+    return local_line(input_value), app.get_asset_url(input_value+'.svg')
 
 # Main
 if __name__ == '__main__':

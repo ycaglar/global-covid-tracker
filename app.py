@@ -174,20 +174,21 @@ app.layout = html.Div(
                                     [
                                         html.P('Population', style = {'font-weight':'bold'}),
                                         html.P(id = 'country_population'),
-                                        html.P('Cumulative Cases'),
+                                        html.P('Cumulative Cases', style = {'font-weight':'bold'}),
                                         html.P(id = 'country_cumulative_cases'),
-                                        html.P('Cumulative Deaths'),
+                                        html.P('Cumulative Deaths', style = {'font-weight':'bold'}),
                                         html.P(id = 'country_cumulative_deaths')
                                     ],
 
                                     style = {
-                                        'margin-top':'5%'
+                                        'margin-top':'5%',
                                     }
                                 ),
                                 html.Img(
                                     id = 'country_flag',
                                     style = {'width':'100%',
-                                            'margin':'auto 0 0 0'},
+                                            'margin':'auto 0 0 0',
+                                            'max-height':'50%'},
                                 )
                             ],
                             id = 'localTweakContainer',

@@ -211,7 +211,7 @@ app.layout = html.Div(
     Input(component_id='local_line_input', component_property='value')
 )
 def update_output_div(input_value):
-    return local_line(input_value), app.get_asset_url(input_value+'.svg')
+    return local_line(input_value), app.get_asset_url('Flags/'+input_value+'.svg')
 
 # Main
 if __name__ == '__main__':

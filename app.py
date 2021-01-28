@@ -162,18 +162,27 @@ app.layout = html.Div(
             [
                 html.Div(
                     [
-                        html.Div([
-                            html.Label('Country'),
+                        html.Div(
+                            [
+                                html.Label('Country'),
                                 dcc.Dropdown(
                                     id = 'local_line_input',
                                     options = country_options,
                                     value = 'United States'
+                                ),
+                                html.Img(
+                                    src = app.get_asset_url('United States.svg'),
+                                    id = 'plotly-image',
+                                    style = {'width':'100%',
+                                            'margin':'auto 0 0 0'}
                                 )
                             ],
                             id = 'localTweakContainer',
                             className = 'pretty_container',
-                            style = {'height': '90%'},
-                        ),
+                            style = {'display':'flex',
+                                     'flex-direction':'column',
+                                     'height':'90%'},
+                        )
                     ],
                     id = 'left-column-local-tweak',
                     className = 'four columns'

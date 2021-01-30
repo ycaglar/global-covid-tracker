@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="875"
+   height="500"
+   viewBox="-75 -40 116.66667 66.666667"
+   version="1.1"
+   id="svg22"
+   sodipodi:docname="Pakistan.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+  <metadata
+     id="metadata28">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs26" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1344"
+     inkscape:window-height="729"
+     id="namedview24"
+     showgrid="false"
+     inkscape:zoom="0.26951888"
+     inkscape:cx="168.33777"
+     inkscape:cy="25.552576"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg22" />
+  <title
+     id="title10">Flag of Pakistan</title>
+  <g
+     id="g34"
+     transform="matrix(0.83333333,0,0,0.83333333,-12.5,-6.6666668)">
+    <rect
+       x="-75"
+       y="-40"
+       width="140"
+       height="80"
+       fill="#ffffff"
+       id="rect12"
+       style="stroke-width:1.08012" />
+    <rect
+       x="-40"
+       y="-40"
+       width="105"
+       height="80"
+       fill="#01411c"
+       id="rect14"
+       style="stroke-width:1.08012" />
+  </g>
+  <g
+     id="g63"
+     transform="translate(4.5309027)">
+    <g
+       id="g43"
+       transform="matrix(0.83333333,0,0,0.83333333,-8.3264093,-8.3361027)">
+      <circle
+         r="24"
+         fill="#ffffff"
+         id="circle16"
+         cx="0"
+         cy="0" />
+      <circle
+         cx="-7"
+         cy="-40"
+         fill="#01411c"
+         transform="rotate(-41.63354,45,-40)"
+         id="circle18"
+         r="22" />
+    </g>
+    <polygon
+       points="0,-513674 301930,415571 -488533,-158734 488533,-158734 -301930,415571 "
+       fill="#ffffff"
+       transform="matrix(1.1889878e-5,-5.2028509e-6,5.2028509e-6,1.1889878e-5,-2.5345425,-15.524851)"
+       id="polygon20" />
+  </g>
+</svg>

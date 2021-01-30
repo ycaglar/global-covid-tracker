@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="875"
+   height="500"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="Samoa.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+  <metadata
+     id="metadata33">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1344"
+     inkscape:window-height="729"
+     id="namedview31"
+     showgrid="false"
+     inkscape:zoom="0.50078258"
+     inkscape:cx="419.73807"
+     inkscape:cy="320.6357"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg29" />
+  <defs
+     id="defs11">
+    <path
+       id="s"
+       d="M 0,0 0.309017,0.951057 -0.5,0.363271 h 1 l -0.809017,0.587786 z" />
+  </defs>
+  <rect
+     width="875"
+     height="500"
+     fill="#ce1126"
+     id="rect13"
+     x="0"
+     y="0"
+     style="stroke-width:0.324796" />
+  <rect
+     width="437.5"
+     height="250"
+     fill="#002b7f"
+     id="rect15"
+     x="0"
+     y="0"
+     style="stroke-width:0.324796" />
+  <g
+     fill="#ffffff"
+     id="g27"
+     transform="matrix(0.34722222,0,0,0.34722222,-31.249998,0)">
+    <use
+       xlink:href="#s"
+       transform="matrix(160,0,0,160,720,30)"
+       id="use17"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#s"
+       transform="matrix(160,0,0,160,500,210)"
+       id="use19"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#s"
+       transform="matrix(150,0,0,150,945,180)"
+       id="use21"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#s"
+       transform="matrix(100,0,0,100,830,364.89435)"
+       id="use23"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#s"
+       transform="matrix(200,0,0,200,720,499.7887)"
+       id="use25"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+  </g>
+</svg>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="875"
+   height="500"
+   viewBox="0 0 175 100"
+   version="1.1"
+   id="svg30"
+   sodipodi:docname="Antigua and Barbuda.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+  <metadata
+     id="metadata36">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs34" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1344"
+     inkscape:window-height="729"
+     id="namedview32"
+     showgrid="false"
+     inkscape:zoom="0.51219077"
+     inkscape:cx="716.38777"
+     inkscape:cy="272.56655"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg30" />
+  <path
+     fill="#ffffff"
+     d="M 0,0 H 175 V 100 H 0 Z"
+     id="path10"
+     style="stroke-width:1.17405" />
+  <path
+     d="M 0,0 H 175 V 50 H 0 Z"
+     id="path12"
+     style="stroke-width:1.17405" />
+  <g
+     transform="matrix(1.0869565,0,0,1.0869565,87.5,39.130435)"
+     id="g24">
+    <g
+       id="b">
+      <path
+         id="a"
+         d="M -30,0 0,-5.742 V 5.742 Z"
+         fill="#fcd116" />
+      <use
+         xlink:href="#a"
+         transform="rotate(22.5)"
+         id="use15"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+      <use
+         xlink:href="#a"
+         transform="rotate(45)"
+         id="use17"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+    </g>
+    <use
+       xlink:href="#b"
+       transform="rotate(67.5)"
+       id="use20"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#b"
+       transform="rotate(135)"
+       id="use22"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+  </g>
+  <path
+     fill="#0072c6"
+     d="m 0,39.130435 h 175 v 21.73913 H 0 Z"
+     id="path26"
+     style="stroke-width:1.17405" />
+  <path
+     d="M 0,0 V 100 H 175 V 0 L 87.5,100 Z"
+     fill="#ce1126"
+     id="path28"
+     style="stroke-width:1.17405" />
+</svg>

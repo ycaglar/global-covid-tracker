@@ -6,7 +6,7 @@
 ## Overview
 Global Covid Tracker provides an overview of the Covid-19 Pandemic. Live, interactive charts allows users to better understand the current state and the past of the coronavirus worldwide health crisis.
 
-![Tux](/screenshots/Screenshot.png)
+![Tux](/screenshots/screenshot_n.png)
 
 ## How to Contribute
 Contributions are always welcome. Please take the following steps for your commit.

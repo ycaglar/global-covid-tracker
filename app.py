@@ -13,7 +13,7 @@ from data_store import dataframe as df
 from data_store import global_df
 
 app = dash.Dash(
-    __name__, meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
+    __name__, title='Global Covid Tracker', meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
 )
 server = app.server
 

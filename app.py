@@ -216,13 +216,13 @@ app.layout = html.Div(
             className = 'row flex-display',
         ),
         html.Footer([
-            # html.Img(src = "/assets/badge.png"),
-            html.P(
-                [
-                    'Created by ',
-                    html.A('Çağlar', href = 'https://caalar.com')
-                ]
-            )
+            html.A([html.Img(src = '/assets/badge.png'),],
+                href = 'https://caalar.com'
+            ),
+            # html.P([
+            #         'Created by ',
+            #         html.A('Çağlar', href = 'https://caalar.com')
+            #     ])
         ])
     ],
     id = 'mainContainer',

@@ -151,8 +151,9 @@ body {
   transform: translate(30px, 349px);
 }
 
-/* footer {
- position:relative;
+footer {
+    text-align:center;
+    position:relative;
 }
 
 footer img {
@@ -165,22 +166,20 @@ footer img {
  -webkit-border-radius:50%;
  border-radius:50%;
  webkit-right:2%;
- right:2%;
+ right:2.5%;
  z-index:111;
- bottom:80px;
+ bottom:5%;
  text-align:center;
-} */
-
-footer {
-    text-align:center;
+ opacity:0.6;
 }
 
-footer img {
-    width:5%;
+footer img:hover {
+    opacity:1;
 }
 
 footer p {
-    padding-top:1%;
+    padding:1.5%;
+    vertical-align: middle;
     color:#030e0e;
 }
 

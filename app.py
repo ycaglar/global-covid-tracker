@@ -240,7 +240,7 @@ app.layout = html.Div(
 def update_output_div(input_value):
     selected_df = df[df['Country'] == input_value].tail(1).astype({'Population': 'str'})
     return local_line(input_value),\
-           app.get_asset_url('Flags_S/'+input_value+'.svg'),\
+           app.get_asset_url('Flags/'+input_value+'.svg'),\
            selected_df['Population']+'000',\
            selected_df['Cumulative_cases'],\
            selected_df['Cumulative_deaths']

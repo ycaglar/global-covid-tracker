@@ -8,6 +8,17 @@ Global Covid Tracker provides an overview of the Covid-19 Pandemic. Live, intera
 
 ![Tux](/screenshots/screenshot_n.png)
 
+## Manual
+Global Covid Tracker is available at https://www.globalcovidtracker.app \
+If you would like to build from the source, run the following commands in the order they were given.
+
+```
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
+```
+
 ## How to Contribute
 Contributions are always welcome. Please take the following steps for your commit.
 

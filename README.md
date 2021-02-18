@@ -10,7 +10,7 @@ Global Covid Tracker provides an overview of the Covid-19 Pandemic. Live, intera
 
 ## Manual
 Global Covid Tracker is available at https://www.globalcovidtracker.app \
-If you would like to build from the source, run the following commands in the order they were given.
+If you would like to build from the source, run the following commands in the order given.
 
 ```
 python -m venv venv

@@ -6,13 +6,14 @@ from math import log
 df = df[df['Date_reported'] == pd.Timestamp.today().normalize() - pd.Timedelta(days = 1)]
 df = df[['Country', 'Region', 'New_cases', 'Population']]
 
-
 fig = px.treemap(df,
+                 custom_data = df.columns,
                  path = [px.Constant('World'), 'Region', 'Country'],
                  values = 'Population',
                  color = df['New_cases'].apply(lambda new_cases:log(new_cases) if new_cases > 1 else new_cases),
                  color_continuous_scale = 'ylgnbu',
-                 hover_data = ['Population', 'New_cases'],
+                 #hover_data = ['Population', 'New_cases'],
                  labels = {'New_cases':'Cases', 'color':'Cases'},
                  title = 'Global Distribution of New Cases by Region')
 fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})
+fig.update_traces(hovertemplate = 'Region: %{customdata[1]} <br> Population: %{customdata[3]} <br> New Cases: %{customdata[2]}')

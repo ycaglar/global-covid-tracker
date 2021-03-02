@@ -12,7 +12,10 @@ pd.set_option('display.max_columns', None)
 
 global_df = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-table-data.csv', low_memory = False)
 global_df = global_df[global_df['Name'] == 'Global']
-global_df = global_df[['Cases - cumulative total', 'Cases - newly reported in last 24 hours', 'Deaths - cumulative total', 'Deaths - newly reported in last 24 hours']]
+global_df = global_df[['Cases - cumulative total',\
+                       'Cases - newly reported in last 24 hours',\
+                       'Deaths - cumulative total',\
+                       'Deaths - newly reported in last 24 hours']]
 global_df = global_df.rename(columns = {'Cases - cumulative total':'Cumulative_cases',\
                                         'Cases - newly reported in last 24 hours':'New_cases',\
                                         'Deaths - cumulative total':'Cumulative_deaths',\

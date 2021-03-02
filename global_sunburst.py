@@ -3,10 +3,10 @@ import plotly.express as px
 from data_store import dataframe as df
 from math import log
 
-df = df[df['Date_reported'] == pd.Timestamp.today().normalize() - pd.Timedelta(days = 1)]
 df = df[['Country', 'Region', 'Cumulative_cases', 'Population']]
-df = df[df['Population'] >= 30_000_000]
-
+df = df.groupby('Country').tail(1)
+df.sort_values(by = ['Population'], inplace = True, ascending = False)
+df = df[:30]
 
 fig = px.sunburst(df,
                   custom_data = ['Country', 'Region', 'Population', 'Cumulative_cases'],

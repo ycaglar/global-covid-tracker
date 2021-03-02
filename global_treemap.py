@@ -16,4 +16,6 @@ fig = px.treemap(df,
                  labels = {'New_cases':'Cases', 'color':'Cases'},
                  title = 'Global Distribution of New Cases by Region')
 fig.update_layout(margin = {'r':0,'t':60,'l':10,'b':10})
-fig.update_traces(hovertemplate = 'Region: %{customdata[1]} <br> Population: %{customdata[3]} <br> New Cases: %{customdata[2]}')
+fig.update_traces(hovertemplate = 'Region: %{customdata[1]} <br>\
+                                   Population: %{customdata[3]} <br>\
+                                   New Cases: %{customdata[2]}')

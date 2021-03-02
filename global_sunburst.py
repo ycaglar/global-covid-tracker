@@ -22,5 +22,3 @@ fig.update_traces(hovertemplate = '<b>%{customdata[0]}</b> <br>\
                                    Region: %{customdata[1]} <br>\
                                    Population: %{customdata[2]} <br>\
                                    Cumulative Cases: %{customdata[3]} <br>')
-
-fig.show()

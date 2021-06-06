@@ -1,19 +1,43 @@
+"""
+This is the 'global_choropleth' module.
+
+The global_choropleth module is an interactive visualization module. It displays
+Covid-19 statistics by projecting on an orthographic world map. It is possible
+to drag, rotate, zoom-in, zoom-out the figure. Additionaly a brief summary of
+the data can be displayed by hovering over countries on the map.
+"""
+
 import pandas as pd
 import plotly.express as px
 from data_store import dataframe as df
 from math import log
 
 df = df[df['Date_reported'] == pd.Timestamp.today().normalize() - pd.Timedelta(days = 1)]
-df = df[['Date_reported', 'Country', 'Country_code', 'Region', 'New_cases', 'Cumulative_cases', 'New_deaths', 'Cumulative_deaths']]
+df = df[['Date_reported',
+         'Country',
+         'Country_code',
+         'Region',
+         'New_cases',
+         'Cumulative_cases',
+         'New_deaths',
+         'Cumulative_deaths']]
 df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m-%d')
 
 fig = px.choropleth(df,
-                    custom_data = ['Country', 'Region', 'New_cases', 'Cumulative_cases', 'New_deaths', 'Cumulative_deaths'],
+                    custom_data = ['Country',
+                                   'Region',
+                                   'New_cases',
+                                   'Cumulative_cases',
+                                   'New_deaths',
+                                   'Cumulative_deaths'],
                     locations = 'Country_code',
                     color = df['New_cases'].apply(lambda new_cases:log(new_cases) if new_cases > 1 else new_cases),
                     color_continuous_scale = 'ylgnbu',
                     hover_name = 'Country',
-                    hover_data = ['Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths'],
+                    hover_data = ['Region',
+                                  'New_cases',
+                                  'Cumulative_cases',
+                                  'Cumulative_deaths'],
                     labels = {'color':'New Cases'})
 fig.update_geos(projection_type = 'orthographic')
 fig.update_layout(margin = {'r':0,'t':10,'l':0,'b':10})

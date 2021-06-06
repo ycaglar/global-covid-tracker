@@ -1,7 +1,9 @@
 import pandas as pd
 from country_names import names
 
-df = pd.read_csv('https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_TotalPopulationBySex.csv', low_memory = False, usecols = ['Location', 'Time', 'PopTotal'])
+df = pd.read_csv('https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_TotalPopulationBySex.csv',
+                 low_memory = False,
+                 usecols = ['Location', 'Time', 'PopTotal'])
 
 df = df[df['Time'] == 2020]
 df = df[['Location', 'PopTotal']].drop_duplicates()

@@ -1,3 +1,15 @@
+"""
+This is the 'colors' module.
+
+The colors module contains three color palettes in the form of static lists of
+color codes to be used in various visual graphs within the app.
+
+    YlGnBu is for Yellow, Green and Blue color spectrum.
+    YlGnBu_e is for YlGnBu extended
+    YlGnBu_ec stands for YlGnBu extended corrected(light correction)
+"""
+
+
 YlGnBu = ['#FFFFD9',
           '#EDF8B1',
           '#C7E9B4',

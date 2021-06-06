@@ -1,3 +1,15 @@
+"""
+This is the 'app' module.
+
+The app module constitutes the entry point of the Global Covid Tracker web app.
+
+This module can be triggered by a web server in a production environment or can
+be built from the source code as below:
+
+For example,
+> python app.py
+"""
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -10,10 +22,13 @@ from global_sunburst import fig as global_sunburst
 from global_pie import fig as global_pie
 from local_line import fig as local_line
 from data_store import dataframe as df
-from data_store import global_df
+from covid_data_global import df as global_df
 
 app = dash.Dash(
-    __name__, title='Global Covid Tracker', meta_tags = [{'name': 'viewport', 'content': 'width = device-width'}]
+    __name__,
+    title = 'Global Covid Tracker',
+    meta_tags = [{'name': 'viewport',
+                  'content': 'width = device-width'}]
 )
 server = app.server
 

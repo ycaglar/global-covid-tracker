@@ -4,8 +4,17 @@ from data_store import dataframe as df
 import colors
 
 
-df = df[['Date_reported', 'Country', 'Region', 'New_cases', 'Cumulative_cases', 'Cumulative_deaths']]
-df = df.groupby(['Country', 'Region', pd.Grouper(key = 'Date_reported', freq = 'M')]).agg({'New_cases':'sum', 'Cumulative_cases':'sum', 'Cumulative_deaths':'sum'}).reset_index()
+df = df[['Date_reported',
+         'Country',
+         'Region',
+         'New_cases',
+         'Cumulative_cases',
+         'Cumulative_deaths']]
+df = df.groupby(['Country',
+                 'Region',
+                 pd.Grouper(key = 'Date_reported', freq = 'M')]).agg({'New_cases':'sum',
+                                                                      'Cumulative_cases':'sum',
+                                                                      'Cumulative_deaths':'sum'}).reset_index()
 df['Date_reported'] = df['Date_reported'].dt.strftime('%Y-%m')
 
 fig = px.scatter(df,

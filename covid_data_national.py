@@ -1,9 +1,23 @@
+"""
+This is the 'covid_data_national' module.
+
+The covid_data_national is a helper data store which incorporates a cleaned,
+filtered version of the Covid-19 data categorized by countries. First, it pulls
+raw csv data from The World Health Organization and applies various forms of
+data cleaning procedures such as conditional filtering and altering of rows as
+well as changing data types of some columns to a more compatible data type. An
+example of column refactoring would be changing the data type of Date_reported
+field from string to Pandas datetime data type in order to enable the use of
+advanced filtering and sorting functionality.
+"""
+
 import pandas as pd
 from country_names import names
 from regions import regions
 from country_codes import codes
 
-df = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-data.csv', low_memory = False)
+df = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-data.csv',
+                 low_memory = False)
 df['Date_reported'] = pd.to_datetime(df['Date_reported'])
 df = df[df['WHO_region'] != 'Other']
 df = df[df['New_cases'] >= 0]

@@ -9,7 +9,10 @@ df.sort_values(by = ['Population'], inplace = True, ascending = False)
 df = df[:30]
 
 fig = px.sunburst(df,
-                  custom_data = ['Country', 'Region', 'Population', 'Cumulative_cases'],
+                  custom_data = ['Country',
+                                 'Region',
+                                 'Population',
+                                 'Cumulative_cases'],
                   path = ['Region', 'Country'],
                   values = 'Population',
                   color = df['Cumulative_cases'].apply(lambda cumulative_cases:log(cumulative_cases) if cumulative_cases > 1 else cumulative_cases),

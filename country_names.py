@@ -1,3 +1,10 @@
+"""
+This is the 'country_names' module.
+
+The country_names module consists of one dictionary which provides corrected or
+shortened versions of country names.
+"""
+
 names = {'Bolivia (Plurinational State of)':'Bolivia',
          'Democratic People\'s Republic of Korea':'North Korea',
          'Dem. People\'s Republic of Korea':'North Korea',

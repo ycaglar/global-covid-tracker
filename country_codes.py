@@ -1,3 +1,11 @@
+"""
+This is the 'country_codes' module.
+
+The country_codes module supplies one static dictionary called 'codes' which
+maps two letter country codes (ISO 3166-1 alpha-2) to three letter country codes
+(ISO 3166-1 alpha-3).
+"""
+
 codes = {'AF':'AFG',
          'AL':'ALB',
          'DZ':'DZA',

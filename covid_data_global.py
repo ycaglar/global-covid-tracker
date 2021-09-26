@@ -14,7 +14,8 @@ import pandas as pd
 
 df = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-table-data.csv',
                  low_memory = False)
-df = df[df['Name'] == 'Global']
+df = df.loc[['Global']]
+# df = df[df['Name'] == 'Global']
 df = df[['Cases - cumulative total',\
          'Cases - newly reported in last 24 hours',\
          'Deaths - cumulative total',\
@@ -23,6 +24,7 @@ df = df.rename(columns = {'Cases - cumulative total':'Cumulative_cases',\
                           'Cases - newly reported in last 24 hours':'New_cases',\
                           'Deaths - cumulative total':'Cumulative_deaths',\
                           'Deaths - newly reported in last 24 hours':'New_deaths'})
+df = df.fillna(0)
 df = df.astype({'New_cases':'int64',\
                 'Cumulative_cases':'int64',\
                 'New_deaths':'int64',\

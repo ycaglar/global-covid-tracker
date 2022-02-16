@@ -1,3 +1,12 @@
+"""
+This is the 'global_progress' module.
+
+The global_progress module visualizes the progress of the outbreak with the help
+of animated graphics. The animation can be controlled using the play, stop
+buttons as well as dragging the cursor under the animation window. Each animated
+object can be further inspected by hovering ower it.
+"""
+
 import pandas as pd
 import plotly.express as px
 from data_store import dataframe as df

@@ -1,3 +1,16 @@
+"""
+This is the 'global_sunburst' module.
+
+This module is an interactive graph designed to visualize the global data of the
+distribution of cumulative cases by region. The graph has an inner and an outer
+circle. The inner circle groups geographic regions and a pie slices branching
+from the regions circle gives an idea of how each major sub-region was impacted.
+Users can hover over the sections of the graph to see a brief status report and
+they can also click on the geographic regions within the inner cicrcle to expand
+the view and examine the status of the outbreak by focusing on a particular
+region. 
+"""
+
 import pandas as pd
 import plotly.express as px
 from data_store import dataframe as df

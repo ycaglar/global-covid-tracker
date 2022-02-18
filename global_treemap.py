@@ -1,3 +1,14 @@
+"""
+This is the 'global_treemap' module.
+
+The treemap module uses boxes to visualize data. Each box represents a
+geographic region or a sub-region. The outer most container is the World and the
+other regions, continents, countries follow the same hierarchical structure by
+nesting inside one another. Hover data provides a brief status report for each
+section of the graph.
+"""
+
+
 from data_store import dataframe as df
 import plotly.express as px
 import pandas as pd

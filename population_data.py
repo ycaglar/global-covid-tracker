@@ -1,3 +1,11 @@
+"""
+This is the 'population_data' module.
+
+Population information is displayed on various sections within the app such as
+hover windows and country cards. The population information is pulled from the
+United Nation's Database and cleaned/organized to fit the use case of the app.
+"""
+
 import pandas as pd
 from country_names import names
 

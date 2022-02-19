@@ -1,3 +1,13 @@
+"""
+This is the 'local_line' module.
+
+Local_line is essentially an interactive line graph. It displays new cases and
+new deaths with two distinchtly colored lines and how they progressed within the
+course of several months. The status summary window pops up on mouse hover. In
+addition to that, the entire graph can be zoomed into by drawing a window with
+the mouse.
+"""
+
 import plotly.express as px
 from data_store import dataframe
 import colors

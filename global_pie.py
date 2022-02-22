@@ -5,9 +5,6 @@ The global_pie module displays the first 19 countries which were most impacted
 by the Covid-19 global pandemic. First, the data imported from the data_store
 module is grouped by countries and then sorted visualizing cumulative cases per
 country  one function, factorial().  For example,
-
->>> factorial(5)
-120
 """
 
 import plotly.express as px

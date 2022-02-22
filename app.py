@@ -62,7 +62,8 @@ app.layout = html.Div(
                                 [
                                     html.H3('Live Status')
                                 ],
-                                style = {'margin-bottom':'15%', 'text-align':'center'}
+                                style = {'margin-bottom':'15%',
+                                         'text-align':'center'}
                             ),
                             html.H4(global_df['New_cases']),
                             'New Cases',
@@ -75,7 +76,9 @@ app.layout = html.Div(
                             ],
                             id = 'liveStatusContainer',
                             className = 'pretty_container',
-                            style = {'height': '100%', 'color':'#373737', 'text-align':'right'},
+                            style = {'height': '100%',
+                                     'color':'#373737',
+                                     'text-align':'right'},
                         ),
                     ],
                     id = 'left-column',

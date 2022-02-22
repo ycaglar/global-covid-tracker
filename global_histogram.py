@@ -1,10 +1,10 @@
 """
 This is the 'global_histogram' module.
 
-The global_histogram module is essentially an interactive histogram figure 
-
->>> factorial(5)
-120
+The global_histogram module is essentially an interactive histogram figure
+#
+# >>> factorial(5)
+# 120
 """
 
 import plotly.express as px

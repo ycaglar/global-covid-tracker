@@ -11,6 +11,7 @@ For example,
 """
 
 import dash
+from dash import html, dcc
 from dash.dependencies import Input, Output
 from global_choropleth import fig as global_choropleth
 from global_treemap import fig as global_treemap

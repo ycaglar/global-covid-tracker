@@ -189,11 +189,14 @@ app.layout = html.Div(
                                 ),
                                 html.Div(
                                     [
-                                        html.P('Population', style = {'font-weight':'bold'}),
+                                        html.P('Population',
+                                                style = {'font-weight':'bold'}),
                                         html.P(id = 'country_population'),
-                                        html.P('Cumulative Cases', style = {'font-weight':'bold'}),
+                                        html.P('Cumulative Cases',
+                                                style = {'font-weight':'bold'}),
                                         html.P(id = 'country_cumulative_cases'),
-                                        html.P('Cumulative Deaths', style = {'font-weight':'bold'}),
+                                        html.P('Cumulative Deaths',
+                                                style = {'font-weight':'bold'}),
                                         html.P(id = 'country_cumulative_deaths')
                                     ],
 
@@ -247,12 +250,18 @@ app.layout = html.Div(
 )
 
 @app.callback(
-    Output(component_id = 'country_figure', component_property = 'figure'),
-    Output(component_id = 'country_flag', component_property = 'src'),
-    Output(component_id = 'country_population', component_property = 'children'),
-    Output(component_id = 'country_cumulative_cases', component_property = 'children'),
-    Output(component_id = 'country_cumulative_deaths', component_property = 'children'),
-    Input(component_id = 'country_selector', component_property = 'value')
+    Output(component_id = 'country_figure',
+           component_property = 'figure'),
+    Output(component_id = 'country_flag',
+           component_property = 'src'),
+    Output(component_id = 'country_population',
+           component_property = 'children'),
+    Output(component_id = 'country_cumulative_cases',
+           component_property = 'children'),
+    Output(component_id = 'country_cumulative_deaths',
+           component_property = 'children'),
+    Input(component_id = 'country_selector',
+          component_property = 'value')
 )
 def update_output_div(input_value):
     selected_df = df[df['Country'] == input_value].tail(1).astype({'Population': 'str'})

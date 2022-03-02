@@ -14,7 +14,7 @@ import dash
 from dash import html, dcc
 from dash.dependencies import Input, Output
 from global_choropleth import fig as global_choropleth
-from global_treemap import fig as global_treemap
+from data-plotters.global.global_treemap import fig as global_treemap
 from global_histogram import fig as global_histogram
 from global_progress import fig as global_progress
 from global_sunburst import fig as global_sunburst

@@ -9,7 +9,6 @@ color codes to be used in various visual graphs within the app.
     YlGnBu_ec stands for YlGnBu extended corrected(light correction)
 """
 
-
 YlGnBu = ['#FFFFD9',
           '#EDF8B1',
           '#C7E9B4',

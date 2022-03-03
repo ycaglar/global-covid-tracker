@@ -8,7 +8,6 @@ nesting inside one another. Hover data provides a brief status report for each
 section of the graph.
 """
 
-
 from data_store import dataframe as df
 import plotly.express as px
 import pandas as pd

@@ -22,7 +22,7 @@ from global_pie import fig as global_pie
 from local_line import fig as local_line
 from data_store import dataframe as df
 from covid_data_global import df as global_df
-from banner import banner
+from banner_view import banner
 
 app = dash.Dash(
     __name__,

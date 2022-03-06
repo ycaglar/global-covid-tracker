@@ -22,6 +22,7 @@ from global_pie import fig as global_pie
 from local_line import fig as local_line
 from data_store import dataframe as df
 from covid_data_global import df as global_df
+from banner import banner
 
 app = dash.Dash(
     __name__,
@@ -40,18 +41,19 @@ app.layout = html.Div(
         dcc.Store(id = 'aggregate_data'),
         # empty Div to trigger javascript file for graph resizing
         html.Div(id = 'output-clientside'),
-        html.Div(
-            [
-                html.Img(
-                    src = app.get_asset_url('banner.jpg'),
-                    #id="plotly-image",
-                    style={'width':'100%',
-                           'height':'auto'},
-                )
-
-            ],
-            style = { 'margin-top':'0' }
-        ),
+        # html.Div(
+        #     [
+        #         html.Img(
+        #             src = app.get_asset_url('banner.jpg'),
+        #             #id="plotly-image",
+        #             style={'width':'100%',
+        #                    'height':'auto'},
+        #         )
+        #
+        #     ],
+        #     style = { 'margin-top':'0' }
+        # ),
+        banner,
         html.Div(
             [
                 html.Div(

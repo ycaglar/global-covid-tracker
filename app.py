@@ -22,7 +22,8 @@ from global_pie import fig as global_pie
 from local_line import fig as local_line
 from data_store import dataframe as df
 from covid_data_global import df as global_df
-from banner_view import banner
+from banner_view import banner_view
+from live_status_view import live_status_view
 
 app = dash.Dash(
     __name__,
@@ -41,50 +42,10 @@ app.layout = html.Div(
         dcc.Store(id = 'aggregate_data'),
         # empty Div to trigger javascript file for graph resizing
         html.Div(id = 'output-clientside'),
-        # html.Div(
-        #     [
-        #         html.Img(
-        #             src = app.get_asset_url('banner.jpg'),
-        #             #id="plotly-image",
-        #             style={'width':'100%',
-        #                    'height':'auto'},
-        #         )
-        #
-        #     ],
-        #     style = { 'margin-top':'0' }
-        # ),
-        banner,
+        banner_view,
         html.Div(
             [
-                html.Div(
-                    [
-                        html.Div([
-                            html.Div(
-                                [
-                                    html.H3('Live Status')
-                                ],
-                                style = {'margin-bottom':'15%',
-                                         'text-align':'center'}
-                            ),
-                            html.H4(global_df['New_cases']),
-                            'New Cases',
-                            html.H4(global_df['Cumulative_cases']),
-                            'Cumulative Cases',
-                            html.H4(global_df['New_deaths']),
-                            'New Deaths',
-                            html.H4(global_df['Cumulative_deaths']),
-                            'Cumulative Deaths'
-                            ],
-                            id = 'liveStatusContainer',
-                            className = 'pretty_container',
-                            style = {'height': '100%',
-                                     'color':'#373737',
-                                     'text-align':'right'},
-                        ),
-                    ],
-                    id = 'left-column',
-                    className = 'three columns'
-                ),
+                live_status_view,
                 html.Div(
                     [
                         html.Div(

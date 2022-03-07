@@ -8,7 +8,7 @@ app = dash.Dash(
                   'content': 'width = device-width'}]
 )
 
-banner = html.Div(
+banner_view = html.Div(
         [
             html.Img(
                 src = app.get_asset_url('banner.jpg'),

@@ -1,5 +1,6 @@
 import dash
 from dash import html, dcc
+from covid_data_global import df as global_df
 
 app = dash.Dash(
     __name__,
@@ -8,7 +9,7 @@ app = dash.Dash(
                   'content': 'width = device-width'}]
 )
 
-live_status = html.Div(
+live_status_view = html.Div(
     [
         html.Div([
             html.Div(

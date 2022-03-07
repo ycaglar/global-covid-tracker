@@ -24,6 +24,7 @@ from data_store import dataframe as df
 from covid_data_global import df as global_df
 from banner_view import banner_view
 from live_status_view import live_status_view
+from global_choropleth_view import global_choropleth_view
 
 app = dash.Dash(
     __name__,
@@ -46,18 +47,7 @@ app.layout = html.Div(
         html.Div(
             [
                 live_status_view,
-                html.Div(
-                    [
-                        html.Div(
-                            [dcc.Graph(id = 'global_choropleth',
-                                       figure = global_choropleth)],
-                            id = 'globalChoroplethContainer',
-                            className = 'pretty_container',
-                        ),
-                    ],
-                    id = 'right-column',
-                    className = 'ten columns',
-                )
+                global_choropleth_view
             ],
             className = 'row flex-display',
         ),

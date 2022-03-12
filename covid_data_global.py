@@ -20,12 +20,16 @@ df = df[['Cases - cumulative total',\
          'Cases - newly reported in last 24 hours',\
          'Deaths - cumulative total',\
          'Deaths - newly reported in last 24 hours']]
+df.to_csv('~/Desktop/df1.csv', index = False)
 df = df.rename(columns = {'Cases - cumulative total':'Cumulative_cases',\
                           'Cases - newly reported in last 24 hours':'New_cases',\
                           'Deaths - cumulative total':'Cumulative_deaths',\
                           'Deaths - newly reported in last 24 hours':'New_deaths'})
+df.to_csv('~/Desktop/df2.csv', index = False)
 df = df.fillna(0)
+df.to_csv('~/Desktop/df3.csv', index = False)
 df = df.astype({'New_cases':'int64',\
                 'Cumulative_cases':'int64',\
                 'New_deaths':'int64',\
                 'Cumulative_deaths':'int64'})
+df.to_csv('~/Desktop/df4.csv', index = False)

@@ -33,7 +33,11 @@ server = app.server
 
 country_options = [{"label": country, "value": country}
                     for country in df[df['Cumulative_cases'] > 4_000]['Country'].drop_duplicates()]
-
+global_df.to_csv('~/Desktop/data5.csv', index = False)
+# print(global_df)
+# print('----')
+# print(global_df['Cumulative_cases'])
+# breakpoint()
 # Create app layout
 app.layout = html.Div(
     [
@@ -63,14 +67,28 @@ app.layout = html.Div(
                                 style = {'margin-bottom':'15%',
                                          'text-align':'center'}
                             ),
-                            html.H4(global_df['New_cases']),
-                            'New Cases',
-                            html.H4(global_df['Cumulative_cases']),
-                            'Cumulative Cases',
-                            html.H4(global_df['New_deaths']),
-                            'New Deaths',
-                            html.H4(global_df['Cumulative_deaths']),
-                            'Cumulative Deaths'
+                            html.Table([
+                                html.Tr([
+                                    html.Td('New Cases'),
+                                    html.Td(global_df['New_cases'],
+                                    style = {'text-align':'right'})
+                                ]),
+                                html.Tr([
+                                    html.Td('Cumulative Cases'),
+                                    html.Td(global_df['Cumulative_cases'],
+                                    style = {'text-align':'right'})
+                                ]),
+                                html.Tr([
+                                    html.Td('New Deaths'),
+                                    html.Td(global_df['New_deaths'],
+                                    style = {'text-align':'right'})
+                                ]),
+                                html.Tr([
+                                    html.Td('Cumulative Deaths'),
+                                    html.Td(global_df['Cumulative_deaths'],
+                                    style = {'text-align':'right'})
+                                ]),
+                            ])
                             ],
                             id = 'liveStatusContainer',
                             className = 'pretty_container',

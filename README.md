@@ -4,7 +4,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
 ## Overview
-Global Covid Tracker provides an overview of the Covid-19 Pandemic. Live, interactive charts allows users to better understand the current state and the past of the coronavirus worldwide health crisis.
+Global Covid Tracker provides an overview of the Covid-19 Pandemic. Live, interactive charts allows users to better understand the past and current state of the coronavirus worldwide health crisis.
 
 ![Tux](/screenshots/screenshot_n.png)
 

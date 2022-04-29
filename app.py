@@ -33,11 +33,6 @@ server = app.server
 
 country_options = [{"label": country, "value": country}
                    for country in df[df['Cumulative_cases'] > 4_000]['Country'].drop_duplicates()]
-# global_df.to_csv('~/Desktop/data5.csv', index = False)
-# print(global_df)
-# print('----')
-# print(global_df['Cumulative_cases'])
-# breakpoint()
 # Create app layout
 app.layout = html.Div(
     [

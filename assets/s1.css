@@ -529,7 +529,7 @@ there.
 @media (min-width: 400px) {
 }
 
-/* Larger than phablet (also point when grid becomes active), screen larger than 550px */
+/* Larger than tablet (also point when grid becomes active), screen larger than 550px */
 @media (min-width: 550px) {
   .one.column,
   .one.columns {

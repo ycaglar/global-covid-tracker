@@ -37,7 +37,7 @@ country_options = [{"label": country, "value": country}
 app.layout = html.Div(
     [
         dcc.Store(id='aggregate_data'),
-        # empty Div to trigger javascript file for graph resizing
+        # empty Div to trigger JS file for graph resizing
         html.Div(id='output-clientside'),
         # Banner
         html.Div(

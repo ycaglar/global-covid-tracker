@@ -37,7 +37,7 @@ country_options = [{"label": country, "value": country}
 app.layout = html.Div(
     [
         dcc.Store(id='aggregate_data'),
-        # empty Div to trigger JS file for graph resizing
+        # empty div to trigger JS file for graph resizing
         html.Div(id='output-clientside'),
         # Banner
         html.Div(
@@ -251,6 +251,7 @@ app.layout = html.Div(
             html.A([html.Img(src='/assets/badge.png'), ],
                    href='https://caalar.com'
                    ),
+            # Optional footer
             # html.P([
             #         'Created by ',
             #         html.A('Çağlar', href = 'https://caalar.com')

@@ -251,11 +251,6 @@ app.layout = html.Div(
             html.A([html.Img(src='/assets/badge.png'), ],
                    href='https://caalar.com'
                    ),
-            # Optional footer
-            # html.P([
-            #         'Created by ',
-            #         html.A('Çağlar', href = 'https://caalar.com')
-            #     ])
         ])
     ],
     id='mainContainer',

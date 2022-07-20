@@ -9,9 +9,8 @@ United Nation's Database and cleaned/organized to fit the use case of the app.
 import pandas as pd
 from country_names import names
 
-df = pd.read_csv('https://population.un.org/wpp/Download/Files/\
-                  1_Indicators%20(Standard)/CSV_FILES/\
-                  WPP2019_TotalPopulationBySex.csv',
+# https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_TotalPopulationBySex.csv
+df = pd.read_csv('https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2022_TotalPopulationBySex.csv',
                  low_memory=False,
                  usecols=['Location', 'Time', 'PopTotal'])
 

@@ -249,7 +249,7 @@ app.layout = html.Div(
         ),
         html.Footer([
             html.A([html.Img(src='/assets/badge.png'), ],
-                   href='https://caalar.com'
+                   href='https://cagl.ar'
                    ),
         ])
     ],
@@ -273,15 +273,15 @@ app.layout = html.Div(
           component_property='value')
 )
 def update_output_div(input_value):
-    selected_df = df[df['Country'] == input_value].tail(
-        1).astype({'Population': 'str'})
-    return local_line(input_value),\
-        app.get_asset_url('Flags/' + input_value + '.svg'),\
-        selected_df['Population'],\
-        selected_df['Cumulative_cases'],\
-        selected_df['Cumulative_deaths']
+  selected_df = df[df['Country'] == input_value].tail(
+      1).astype({'Population': 'str'})
+  return local_line(input_value),\
+      app.get_asset_url('Flags/' + input_value + '.svg'),\
+      selected_df['Population'],\
+      selected_df['Cumulative_cases'],\
+      selected_df['Cumulative_deaths']
 
 
 # Main
 if __name__ == '__main__':
-    app.run_server(debug=True)
+  app.run_server(debug=True)

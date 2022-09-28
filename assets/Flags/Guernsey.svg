@@ -12,7 +12,7 @@
    viewBox="0 0 35 20"
    version="1.1"
    id="svg16"
-   sodipodi:docname="Flag_of_Guernsey.svg"
+   sodipodi:docname="Guernsey.svg"
    inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
   <metadata
      id="metadata22">
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -51,12 +51,14 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg16" />
+     inkscape:current-layer="svg16"
+     inkscape:document-rotation="0" />
   <path
-     d="m 2.5,0 h 30 v 20 h -30 z"
+     d="M 0,0 H 35 V 20 H 0 Z"
      fill="#ffffff"
      id="path10"
-     style="stroke-width:0.833333" />
+     style="stroke-width:0.833333"
+     sodipodi:nodetypes="ccccc" />
   <path
      d="m 20,0 v 7.5 h 15 v 5 H 20 V 20 H 15 V 12.5 H 0 v -5 H 15 V 0 Z"
      fill="#e8112d"

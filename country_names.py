@@ -32,4 +32,5 @@ names = {'Bolivia (Plurinational State of)': 'Bolivia',
          'United Republic of Tanzania': 'Tanzania',
          'Brunei Darussalam': 'Brunei',
          'Republic of Abkhazia': 'Abkhazia',
-         'United Arab Emirates': 'Emirates'}
+         'United Arab Emirates': 'Emirates',
+         'Faroe Islands': 'Faroes'}

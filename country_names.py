@@ -29,4 +29,5 @@ names = {'Bolivia (Plurinational State of)': 'Bolivia',
          'Russian Federation': 'Russia',
          'Democratic Republic of the Congo': 'Democratic Congo',
          'Republic of Moldova': 'Moldova',
-         'United Republic of Tanzania': 'Tanzania'}
+         'United Republic of Tanzania': 'Tanzania',
+         'Brunei Darussalam': 'Brunei'}

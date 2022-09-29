@@ -9,13 +9,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="875"
-   height="500"
+   height="499.99997"
+   viewBox="-35 -30 145.83333 83.333328"
    version="1.1"
-   id="svg36"
-   sodipodi:docname="Solomon Islands.svg"
+   id="svg40"
+   sodipodi:docname="Flag_of_the_Solomon_Islands.svg"
    inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
   <metadata
-     id="metadata42">
+     id="metadata46">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,7 +27,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs40" />
+     id="defs44" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -37,58 +38,61 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1344"
-     inkscape:window-height="729"
-     id="namedview38"
+     inkscape:window-height="812"
+     id="namedview42"
      showgrid="false"
-     inkscape:zoom="0.60620787"
-     inkscape:cx="593.12919"
-     inkscape:cy="362.58558"
+     inkscape:zoom="0.62211709"
+     inkscape:cx="617.19365"
+     inkscape:cy="298.32186"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg36" />
-  <path
-     d="M 0,500 V 0 h 875 z"
-     fill="#0051ba"
-     id="path10"
-     style="stroke-width:1.16927" />
-  <path
-     d="M 0,500 H 875 V 0 Z"
+     inkscape:current-layer="svg40" />
+  <clipPath
+     id="rect">
+    <rect
+       x="-35"
+       y="-30"
+       width="200"
+       height="100"
+       id="rect10" />
+  </clipPath>
+  <rect
+     x="-35"
+     y="-30"
+     width="145.83333"
+     height="83.333328"
      fill="#215b33"
-     id="path12"
-     style="stroke-width:1.16927" />
+     id="rect13"
+     style="stroke-width:0.779512" />
   <path
-     d="M 0,500 875,0"
+     d="M -35,53.333333 V -30 h 145.83333"
+     fill="#0051ba"
+     id="path15"
+     style="stroke-width:0.779512" />
+  <path
+     d="M 165,-30 -35,70"
+     stroke-width="9"
      stroke="#fcd116"
-     stroke-width="38.5982"
-     id="path14"
-     sodipodi:nodetypes="cc" />
+     clip-path="url(#rect)"
+     id="path17"
+     transform="matrix(0.72916667,0,0,0.83333333,-9.4791667,-5.0000001)" />
   <g
-     transform="matrix(1.0721729,0,0,1.0721729,150.10421,128.66075)"
-     id="g34">
+     id="g60"
+     transform="matrix(0.78343241,0,0,0.78343241,-10.334952,-7.1633601)">
     <g
-       id="s"
-       fill="#ffffff">
+       id="star"
+       fill="#ffffff"
+       transform="scale(10)">
       <g
-         id="f">
-        <g
-           id="t">
-          <path
-             id="o"
-             d="M 0,-40 V 0 h 20 z"
-             transform="rotate(18,0,-40)" />
-          <use
-             xlink:href="#o"
-             transform="scale(-1,1)"
-             id="use17"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-        </g>
+         id="cone">
+        <polygon
+           id="triangle"
+           points="0,0 0,1 0.5,1 "
+           transform="rotate(18,3.1568758,-0.5)" />
         <use
-           xlink:href="#t"
-           transform="rotate(72)"
+           xlink:href="#triangle"
+           transform="scale(-1,1)"
            id="use20"
            x="0"
            y="0"
@@ -96,45 +100,66 @@
            height="100%" />
       </g>
       <use
-         xlink:href="#t"
-         transform="rotate(-72)"
+         xlink:href="#cone"
+         transform="rotate(72)"
          id="use23"
          x="0"
          y="0"
          width="100%"
          height="100%" />
       <use
-         xlink:href="#f"
-         transform="rotate(144)"
+         xlink:href="#cone"
+         transform="rotate(-72)"
          id="use25"
          x="0"
          y="0"
          width="100%"
          height="100%" />
-    </g>
-    <g
-       id="s2"
-       transform="rotate(40.6)">
       <use
-         id="s1"
-         xlink:href="#s"
-         x="-104"
-         transform="rotate(-40.6,-104,0)"
+         xlink:href="#cone"
+         transform="rotate(144)"
+         id="use27"
+         x="0"
          y="0"
          width="100%"
          height="100%" />
       <use
-         xlink:href="#s1"
-         x="208"
+         xlink:href="#cone"
+         transform="rotate(-144)"
          id="use29"
+         x="0"
          y="0"
          width="100%"
          height="100%" />
     </g>
     <use
-       xlink:href="#s2"
-       transform="scale(-1,1)"
+       xlink:href="#star"
+       transform="translate(19.741054,-16.92013)"
        id="use32"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#star"
+       transform="translate(19.741054,16.92013)"
+       id="use34"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#star"
+       transform="translate(-19.741054,16.92013)"
+       id="use36"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#star"
+       transform="translate(-19.741054,-16.92013)"
+       id="use38"
        x="0"
        y="0"
        width="100%"

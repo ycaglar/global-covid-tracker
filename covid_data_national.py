@@ -15,7 +15,7 @@ import pandas as pd
 from country_codes import codes
 from country_names import names
 from regions import regions
-
+# Import World Health Organization's Covid 19 data into a DataFrame
 df = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-data.csv',
                  low_memory=False)
 df['Date_reported'] = pd.to_datetime(df['Date_reported'])

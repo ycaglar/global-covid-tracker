@@ -18,6 +18,7 @@ from regions import regions
 # Import World Health Organization's Covid 19 data into a DataFrame
 df = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-data.csv',
                  low_memory=False)
+# Convert the data type of the Date_reported column to datatype
 df['Date_reported'] = pd.to_datetime(df['Date_reported'])
 df = df[df['WHO_region'] != 'Other']
 df = df[df['New_cases'] >= 0]

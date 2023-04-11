@@ -1,0 +1,38 @@
+name: deploy-globalcovidtracker.app
+run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+on:
+  push:
+    branches:
+      - master
+
+env:
+  APP_PATH: "/home/user/projects/globalcovidtracker"
+  USERNAME: "user"
+  SERVER_IP: "208.113.200.75"
+  SERVER_URL: "globalcovidtracker.app"
+  SSH_KEY: ${{ secrets.GLOBALCOVIDTRACKER }}
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: prepare
+        run: |
+          mkdir ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/$SERVER_URL
+          chmod 600 ~/.ssh/$SERVER_URL
+          cat >>~/.ssh/config <<END
+          Host $SERVER_URL
+            HostName $SERVER_URL
+            User $USERNAME
+            IdentityFile ~/.ssh/$SERVER_URL
+            StrictHostKeyChecking no
+          END
+
+      - name: deploy
+        run:
+          scp -r ./* $USERNAME@$SERVER_URL:$APP_PATH

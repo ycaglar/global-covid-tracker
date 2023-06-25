@@ -9,7 +9,7 @@ Global Covid Tracker provides an overview of the Covid-19 Pandemic. Live, intera
 ![Tux](/screenshots/screenshot_n.png)
 
 ## Manual
-Global Covid Tracker is available at https://www.globalcovidtracker.app \
+<!-- Global Covid Tracker is available at https://www.globalcovidtracker.app \ -->
 If you would like to build from the source, run the following commands in the order given.
 
 ```
